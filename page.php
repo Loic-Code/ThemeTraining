@@ -2,7 +2,7 @@
 
 <!-- Container -->
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <h1>
+        <h1 class="p-4">
             <?php
             the_title();
             ?>

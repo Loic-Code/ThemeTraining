@@ -7,6 +7,7 @@ function training_supports()
     add_theme_support('html5');
     register_nav_menu('header', 'En tête du menu');
     register_nav_menu('footer', 'Pied de page');
+    add_image_size('card-header', 350, 300, true);
 }
 
 //import des differnet assets
@@ -20,6 +21,8 @@ function training_register_assets()
     }
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
+    wp_enqueue_style('front-style', get_template_directory_uri() . '/assets/front-style.css');
+    wp_enqueue_style('default-style', get_template_directory_uri() . '/style.css');
 }
 
 function training_menu_class($classes) {
@@ -36,3 +39,5 @@ add_action('after_setup_theme', 'training_supports');
 add_action('wp_enqueue_scripts', 'training_register_assets');
 add_filter('nav_menu_css_class', 'training_menu_class');
 add_filter('nav_menu_link_attributes', 'training_menu_link_class');
+
+

@@ -1,3 +1,7 @@
 /*
 Theme Name: Training Theme
 */
+
+.img-about img{
+	object-fit: cover;
+}
