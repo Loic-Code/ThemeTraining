@@ -19,7 +19,7 @@
                     'theme_location' => 'header',
                     'container' => false,
                     'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
-                    ]) ?>
+                ]) ?>
                 <!--
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -49,4 +49,9 @@
             </div>
         </div>
     </nav>
+    <div class="row p-0 m-0">
+        <div class="page-header d-flex align-items-center justify-content-center">
+        
+        </div>
+    </div>
     <div class="container">

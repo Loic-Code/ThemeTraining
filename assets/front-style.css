@@ -5,3 +5,14 @@ body {
 .container {
     background-color: white;
 }
+
+.page-header {
+    background-image: url('https://picsum.photos/2000/1000');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 80vh;
+    max-width: 100vw;
+    margin-top: 0;
+    padding: 0;
+}

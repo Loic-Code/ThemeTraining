@@ -1,10 +1,11 @@
-<?php
+<?
 
 function training_supports()
 {
     add_theme_support('title-tag');
     add_theme_support('menus');
     add_theme_support('html5');
+    add_theme_support('widgets');
     register_nav_menu('header', 'En tête du menu');
     register_nav_menu('footer', 'Pied de page');
     add_image_size('card-header', 350, 300, true);
