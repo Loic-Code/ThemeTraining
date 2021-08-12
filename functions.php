@@ -1,6 +1,4 @@
-<?php
-
-require_once('walker/commentWalker.php');
+<?
 
 function training_supports()
 {
