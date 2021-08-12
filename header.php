@@ -49,9 +49,11 @@
             </div>
         </div>
     </nav>
+    <?php
+    $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+    list($url, $width, $height, $is_intermediate) = $thumbnail;
+    ?>
     <div class="row p-0 m-0">
-        <div class="page-header d-flex align-items-center justify-content-center">
-        
-        </div>
+        <div class="page-header d-flex align-items-center justify-content-center" style="background-image: url(<?= $url ?>)"></div>
     </div>
     <div class="container">
