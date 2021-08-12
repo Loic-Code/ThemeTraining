@@ -21,8 +21,9 @@ function training_register_assets()
     }
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
-    wp_enqueue_style('front-style', get_template_directory_uri() . '/assets/front-style.css');
     wp_enqueue_style('default-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('front-style', get_template_directory_uri() . '/assets/front-style.css');
+    wp_enqueue_style('aboutUs', get_template_directory_uri() . '/assets/about.css');
 }
 
 function training_menu_class($classes) {
