@@ -1,7 +1,4 @@
 /*
 Theme Name: Training Theme
 */
-
-.img-about img{
-	object-fit: cover;
-}
+@import 'assets/about.css';
