@@ -1,9 +1,9 @@
-<?
+<?php
 
 function training_supports()
 {
     add_theme_support('title-tag');
-    add_theme_support('menus');
+    add_theme_support('menu');
     add_theme_support('html5');
     add_theme_support('widgets');
     register_nav_menu('header', 'En tête du menu');
@@ -20,6 +20,7 @@ function training_register_assets()
         wp_deregister_script('jquery');
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.slim.min.js', [], false, true);
     }
+
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
     wp_enqueue_style('default-style', get_template_directory_uri() . '/style.css');
@@ -41,3 +42,5 @@ add_action('after_setup_theme', 'training_supports');
 add_action('wp_enqueue_scripts', 'training_register_assets');
 add_filter('nav_menu_css_class', 'training_menu_class');
 add_filter('nav_menu_link_attributes', 'training_menu_link_class');
+
+require_once('includes/custom_type.php');
