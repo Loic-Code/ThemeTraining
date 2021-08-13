@@ -9,7 +9,7 @@
                 <p class="card-text"><?php the_excerpt() ?></p>
             </div>
             <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-primary"><a href="<?php the_permalink() ?>">Voir l'article</a></button>
+                <a href="<?php the_permalink() ?>"><button type="button" class="btn btn-outline-primary">Voir l'article</button></a>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 <body class="<?= str_replace('.php', '', get_page_template_slug()) ?>">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">LOGO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,4 +56,4 @@
     <div class="row p-0 m-0">
         <div class="page-header d-flex align-items-center justify-content-center" style="background-image: url(<?= $url ?>)"></div>
     </div>
-    <div class="container">
+    <div class="container pb-4">

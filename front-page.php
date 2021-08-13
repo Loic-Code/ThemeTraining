@@ -4,58 +4,54 @@
 
 <h1 class="p-4">Actualités</h1>
 
-<div class="card mb-12 m-3">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="https://images.unsplash.com/photo-1497911174120-042e550e7e0a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGZlc3RpdmFsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Le passage de Lorem Ipsum standard</h5>
-                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-primary">Voir l'article</button>
-            </div>
-        </div>
-    </div>
-</div>
+<hr>
 
-<div class="card mb-3 m-3">
-    <div class="d-flex flex-row-reverse g-0">
-        <div class="col-md-4">
-            <img src="https://images.unsplash.com/photo-1520483691742-bada60a1edd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" class="img-fluid rounded-end" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Le passage de Lorem Ipsum standard</h5>
-                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-primary">Voir l'article</button>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
 
-<div class="card mb-12 m-3">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="https://images.unsplash.com/photo-1497911174120-042e550e7e0a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGZlc3RpdmFsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Le passage de Lorem Ipsum standard</h5>
-                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-primary">Voir l'article</button>
-            </div>
-        </div>
-    </div>
-</div>
+$query = new WP_Query([
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+]);
+
+$i = 1;
+
+while ($query->have_posts()) : $query->the_post();
+
+    if ($i % 2) {
+        get_template_part('parts/homepage_actu_left', 'post');
+    } else {
+        get_template_part('parts/homepage_actu_right', 'post');
+    }
+
+    $i++;
+
+?>
+
+<?php endwhile;
+wp_reset_postdata(); ?>
 
 <!-- Bannière -->
+</div>
+<div id=" carousel carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <p class="text-light">Temoignage 1"</p>
+    </div>
+    <div class="carousel-item">
+    <p class="text-light">"Temoignage 2"</p>
+    </div>
+    <div class="carousel-item">
+    <p class="text-light">"Temoignage 3"</p>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 <div class="row p-0 m-0">
     <div class="banner d-flex flex-row">
@@ -67,71 +63,39 @@
         -->
     </div>
 </div>
-<div class="container">
+<div class="container pb-4">
     <!-- A propos -->
 
     <h1 class="p-4">A propos</h1>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 m-2">
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1535682215715-c5c6a5d28247?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="picture-card card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
+    <hr>
 
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1535682215715-c5c6a5d28247?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="picture-card card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                </div>
-            </div>
-        </div>
+    <?php $personnels = get_fields(training_get_page_by_template('page-about.php')) ?>
 
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1535682215715-c5c6a5d28247?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="picture-card card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
+    <main class="px-2 py-4">
+        <?php if ($personnels): ?>
+            <div class="row d-flex justify-content-around">
+                <?php foreach ($personnels as $personnel): ?>
+                    <?php if ($personnel['nom'] !== ''): ?>
+                        <?php
+                            /*
+                             * params picture
+                             */
+                            $photo = $personnel['photo'];
+                            $params = 'sizes';
+                            $size = 'thumbnail';
+                        ?>
+                        <div class="card col-12 col-md-7 col-lg-5 col-xl-3 mt-2 mb-5 shadow me-xl-1">
+                            <img src="<?= $photo[$params][$size] ?>" class="card-img-top mt-4 border" alt="<?= $photo['alt']=== '' ? 'photo de ' . esc_html($personnel['nom']) : $photo['alt'] ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"> <?= esc_html(ucfirst($personnel['nom'])) ?> </h5>
+                                <p class="card-text"> <?= esc_html(ucfirst($personnel['description'])) ?> </p>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1535682215715-c5c6a5d28247?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="picture-card card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1535682215715-c5c6a5d28247?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="picture-card card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1535682215715-c5c6a5d28247?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="picture-card card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php endif; ?>
+    </main>
 
     <?php get_footer() ?>

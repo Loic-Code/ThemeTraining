@@ -38,6 +38,16 @@ function training_menu_link_class($attrs) {
     return $attrs;
 }
 
+function training_get_page_by_template($template = '')
+{
+    $args = [
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $template,
+    ];
+
+    return get_pages($args)[0]->ID;
+}
+
 add_action('after_setup_theme', 'training_supports');
 add_action('wp_enqueue_scripts', 'training_register_assets');
 add_filter('nav_menu_css_class', 'training_menu_class');
