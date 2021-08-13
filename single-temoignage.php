@@ -9,35 +9,15 @@ get_header();
     <div class="col-md-6 m-auto">
         <?php
         $testimonies = get_fields();
-        $i = 1;
-        foreach ($testimonies as $testimony) {
-            if ($testimony === get_field('temoignage') || $testimony === get_field('temoignage_' . $i)) {
-                // On enregistre tout les témoignages dans un tableau
-                $data[$i] = $testimony;
-                $i++;
-            }
-        }
-        // The page to display (Usually is received in a url parameter)
-        $page = intval(get_query_var('testimony'));
-        // The number of records to display per page
-        $page_size = 3;
-        // Calculate total number of records, and total number of pages
-        $total_records = count($data);
-        $total_pages   = ceil($total_records / $page_size);
-        // Validation: Page to display can not be greater than the total number of pages
-        if ($page > $total_pages) {
-            $page = $total_pages;
-        }
-        // Validation: Page to display can not be less than 1
-        if ($page < 1) {
-            $page = 1;
-        }
-        // Calculate the position of the first record of the page to display
-        $offset = ($page - 1) * $page_size;
-        // Get the subset of records to be displayed from the array
-        $data = array_slice($data, $offset, $page_size);
+        $data = training_retrieve_all_testimonies($testimonies);
+
+        $pagination_data = training_testimonies_pagination('testimony', 3, $data);
+        $page = $pagination_data['page'];
+        $total_pages = $pagination_data['total_pages'];
+        $pagination = $pagination_data['data'];
+
         ?>
-        <?php foreach ($data as $row) { ?>
+        <?php foreach ($pagination as $row) { ?>
 
             <div class="testimonial rounded-pill d-flex justify-content-between p-3 my-4">
                 <h3 class="testimonial-title titleRight text-center m-auto">
@@ -50,11 +30,11 @@ get_header();
         <?php } ?>
         <div class="d-flex justify-content-around testimony_arrow">
             <?php
-        // Pagination
-        $previous_page = $page - 1;
-        $next_page = $page + 1;
-        if ($page !== 1) {
-        ?>
+            // Pagination
+            $previous_page = $page - 1;
+            $next_page = $page + 1;
+            if ($page > 1) {
+            ?>
                 <a href="<?= add_query_arg(
                                 'testimony',
                                 $previous_page,
@@ -63,13 +43,13 @@ get_header();
 
                     <i class="fas fa-chevron-left"></i></a>
             <?php }
-        if ($page < $total_pages) { ?>
+            if ($page < $total_pages) { ?>
                 <a href="<?= add_query_arg(
                                 'testimony',
                                 $next_page,
                                 get_the_permalink()
                             ); ?>"><i class="fas fa-chevron-right"></i></a>
-        <?php } ?>
+            <?php } ?>
         </div>
     </div>
 
