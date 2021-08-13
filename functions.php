@@ -17,15 +17,19 @@ function training_register_assets()
 {
     wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
     wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [], false, true);
+    wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.15.4/css/all.css');
     if (!is_customize_preview()) {
         wp_deregister_script('jquery');
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.slim.min.js', [], false, true);
     }
+
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
+    wp_enqueue_style('font-awesome');
     wp_enqueue_style('default-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('front-style', get_template_directory_uri() . '/assets/front-style.css');
     wp_enqueue_style('aboutUs', get_template_directory_uri() . '/assets/about.css');
+    wp_enqueue_style('testimonyPage', get_template_directory_uri() . '/assets/testimony.css');
 }
 
 function training_menu_class($classes) {
@@ -42,3 +46,10 @@ add_action('after_setup_theme', 'training_supports');
 add_action('wp_enqueue_scripts', 'training_register_assets');
 add_filter('nav_menu_css_class', 'training_menu_class');
 add_filter('nav_menu_link_attributes', 'training_menu_link_class');
+
+require_once('includes/custom_type.php');
+
+add_filter('query_vars', function($qvars) {
+    $qvars[] = 'testimony';
+    return $qvars;
+});
