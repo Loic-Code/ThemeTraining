@@ -73,14 +73,17 @@ function training_get_page_by_template($template = '')
 
 
 function training_get_testimonies_by_type($post_type){
+    // On creer un objet WP_Query avec un post type spécifique et un status publier
     $query = new WP_Query(array(
         'post_type' => $post_type,
         'post_status' => 'publish'
     ));
+    // On boucle sur WP_Query
     while ($query->have_posts()) {
         $query->the_post();
         $post_id = get_the_ID();
     }
+    // On retourne les poste_id pour les postes ayant le type $post_type
     return $post_id;
     wp_reset_query();
 }
@@ -88,6 +91,7 @@ function training_get_testimonies_by_type($post_type){
 function training_retrieve_all_testimonies($testimonies) {
     $i = 1;
         foreach ($testimonies as $testimony) {
+            // Si le champ correspond a temoignage ou temoignage_x alors on traite
             if ($testimony === get_field('temoignage') || $testimony === get_field('temoignage_' . $i)) {
                 // On enregistre tout les témoignages dans un tableau
                 $data[$i] = $testimony;

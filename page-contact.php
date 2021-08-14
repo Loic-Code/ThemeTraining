@@ -8,8 +8,7 @@
    <?php
     get_header();
 
-    //   var_dump(get_fields());
-
+    // On récupère les differents champs ACF
     $contactForm = get_field('formulaire_de_contact');
     $description = get_field('description');
     $adresse = get_field('adresse');
@@ -30,6 +29,7 @@
                <h3 class="text-center"> Nous contacter </h3>
                <div>
                    <?php
+                   // On affiche le formulaire
                     if ($contactForm) {
                         echo $contactForm;
                     }
@@ -42,6 +42,7 @@
                <div class="col-md-12 px-5">
                    <h3 class="text-center"> Information de contact </h3>
                    <?php
+                   // On affiche la description
                     if ($description) {
                         echo $description;
                     }
@@ -73,6 +74,7 @@
                    <h4> Restons connectés : </h4>
                    <div class="d-flex justify-content-around pt-3 social_logo">
                        <?php
+                       // On affiche les réseaux sociaux
                         if ($social) {
                             foreach ($social as $row) {
                                 switch ($row['title']) {
@@ -98,7 +100,7 @@
                                         break;
 
                                     default:
-                                        var_dump("rien");
+                                        echo '<a href="' . $row['url'] . '" target="_blank"><i class="fab fa-'.$row['title'].'"></i></a>';
                                         break;
                                 }
                             }
