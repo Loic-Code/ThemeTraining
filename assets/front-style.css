@@ -10,8 +10,20 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 50vh;
+    height: 40vh;
     max-width: 100vw;
+    margin-top: 0;
+    padding: 0;
 }
 
+.error-404{
+    height: 50vh;
+    text-align: center;
+}
 
+.logo-comment {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
