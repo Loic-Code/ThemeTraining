@@ -1,0 +1,14 @@
+.footer .custom-logo {
+  height: 120px;
+  width: 120px;
+  display: block;
+  margin: auto auto auto auto;
+}
+
+.footer .fab {
+    color: lightgray;
+}
+
+.footer .fab:hover {
+    color: rgb(255, 4, 4);
+}

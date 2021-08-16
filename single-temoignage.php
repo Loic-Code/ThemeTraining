@@ -8,16 +8,22 @@ get_header();
 
     <div class="col-md-6 m-auto">
         <?php
+        // On recupère tous les champs ACF
         $testimonies = get_fields();
+        // On filtre pour récuperer les champs "testimonies"
         $data = training_retrieve_all_testimonies($testimonies);
-
+        // Logique pour pagination
         $pagination_data = training_testimonies_pagination('testimony', 3, $data);
+
         $page = $pagination_data['page'];
         $total_pages = $pagination_data['total_pages'];
-        $pagination = $pagination_data['data'];
+        $testimonials = $pagination_data['data'];
 
         ?>
-        <?php foreach ($pagination as $row) { ?>
+
+        <?php
+        // On affiche les testimonies
+        foreach ($testimonials as $row) { ?>
 
             <div class="testimonial rounded-pill d-flex justify-content-between p-3 my-4">
                 <h3 class="testimonial-title titleRight text-center m-auto">
@@ -30,6 +36,7 @@ get_header();
         <?php } ?>
         <div class="d-flex justify-content-around testimony_arrow">
             <?php
+
             // Pagination
             $previous_page = $page - 1;
             $next_page = $page + 1;
@@ -57,8 +64,10 @@ get_header();
         <div id="carouselExampleControls" class="carousel vert slide mb-5" data-ride="carousel" data-interval="1">
             <div class="carousel-inner">
                 <?php
+                // On ajoute les images
                 $j = 2;
                 foreach ($testimonies as $page_image) {
+                    // On verifie si il s'agit d'une image_de_page_x
                     if ($page_image === get_field('image_de_page_' . $j)) {
                 ?>
                         <div class="carousel-item">
@@ -66,6 +75,7 @@ get_header();
                         </div>
                     <?php
                         $j++;
+                        // On verifie si il s'agit d'une image_de_page
                     } elseif ($page_image === get_field('image_de_page')) {
                     ?>
                         <div class="carousel-item active">
