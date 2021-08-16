@@ -1,5 +1,7 @@
 <?php
 
+require_once 'walker/CommentWalker.php';
+
 function training_supports()
 {
     add_theme_support('title-tag');

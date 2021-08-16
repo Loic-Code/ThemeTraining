@@ -1,4 +1,10 @@
-<?php $count = absint(get_comments_number()); ?>
+<?php
+
+use Training\CommentWalker;
+
+$count = absint(get_comments_number());
+
+?>
 
 <?php if ($count > 0): ?>
     <h2><?= $count ?> Commentaire<?= $count > 1 ? 's' : '' ?></h2>
@@ -13,7 +19,7 @@
 <?php endif; ?>
 
 <div class="mt-5">
-    <?php wp_list_comments(['style' => 'div']) ?>
+    <?php wp_list_comments(['style' => 'div', 'walker' => new CommentWalker(), 'avatar_size' => 150]) ?>
 </div>
 
 <div class="mt-3">
