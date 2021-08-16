@@ -18,6 +18,7 @@ function training_register_assets()
     wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
     wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [], false, true);
     wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+    wp_register_style('AOSStyle', 'https://unpkg.com/aos@next/dist/aos.css');
     if (!is_customize_preview()) {
         wp_deregister_script('jquery');
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.0.slim.min.js', [], false, true);
@@ -26,11 +27,13 @@ function training_register_assets()
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
     wp_enqueue_style('font-awesome');
+    wp_enqueue_style('AOSStyle');
     wp_enqueue_style('default-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('front-style', get_template_directory_uri() . '/assets/front-style.css');
     wp_enqueue_style('aboutUs', get_template_directory_uri() . '/assets/about.css');
     wp_enqueue_style('testimonyPage', get_template_directory_uri() . '/assets/testimony.css');
     wp_enqueue_style('testimonyHome', get_template_directory_uri() . '/assets/home-testimony.css');
+    wp_enqueue_style('contactPage', get_template_directory_uri() . '/assets/contact.css');
 }
 
 function training_menu_class($classes)
@@ -70,14 +73,17 @@ function training_get_page_by_template($template = '')
 
 
 function training_get_testimonies_by_type($post_type){
+    // On creer un objet WP_Query avec un post type spécifique et un status publier
     $query = new WP_Query(array(
         'post_type' => $post_type,
         'post_status' => 'publish'
     ));
+    // On boucle sur WP_Query
     while ($query->have_posts()) {
         $query->the_post();
         $post_id = get_the_ID();
     }
+    // On retourne les poste_id pour les postes ayant le type $post_type
     return $post_id;
     wp_reset_query();
 }
@@ -85,6 +91,7 @@ function training_get_testimonies_by_type($post_type){
 function training_retrieve_all_testimonies($testimonies) {
     $i = 1;
         foreach ($testimonies as $testimony) {
+            // Si le champ correspond a temoignage ou temoignage_x alors on traite
             if ($testimony === get_field('temoignage') || $testimony === get_field('temoignage_' . $i)) {
                 // On enregistre tout les témoignages dans un tableau
                 $data[$i] = $testimony;
