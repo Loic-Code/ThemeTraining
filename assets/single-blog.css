@@ -3,7 +3,7 @@
     object-position: center;
 }
 
-hr {
+.blog-hr {
     width: 200px;
     margin: 0 auto;
     border: 1px solid #000000;
