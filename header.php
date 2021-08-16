@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php wp_head(); ?>
 </head>
+
 <body class="<?= str_replace('.php', '', get_page_template_slug()) ?>">
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
@@ -37,9 +38,9 @@ list($url, $width, $height, $is_intermediate) = $thumbnail;
 <?php if (is_404()): ?>
     <div class="page-header d-flex align-items-center justify-content-center"
          style="background-image: url(<?php header_image() ?>)"></div>
-<?php elseif (is_home() || is_single()): ?>
-    <div class="page-header d-flex align-items-center justify-content-center"
-         style="background-image: url(<?= get_the_post_thumbnail_url($bannerBlog) ?>)"></div>
+<?php elseif (is_home() || is_single() && !is_single(get_post_type('temoignage'))): ?>
+        <div class="page-header d-flex align-items-center justify-content-center"
+             style="background-image: url(<?= get_the_post_thumbnail_url($bannerBlog) ?>)"></div>
 <?php else: ?>
     <div class="row p-0 m-0">
         <div class="page-header d-flex align-items-center justify-content-center"
