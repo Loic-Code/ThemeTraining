@@ -16,6 +16,19 @@ function training_supports()
     add_image_size('card-header', 300, 250, true);
 }
 
+function training_custom_logo_setup() {
+    $defaults = array(
+        'flex-height'          => true,
+        'flex-width'           => true,
+        'header-text'          => array( 'site-title', 'site-description' ),
+        'unlink-homepage-logo' => true, 
+    );
+ 
+    add_theme_support( 'custom-logo', $defaults );
+}
+ 
+
+
 //import des different assets
 function training_register_assets()
 {
@@ -34,6 +47,7 @@ function training_register_assets()
     wp_enqueue_style('testimonyPage', get_template_directory_uri() . '/assets/testimony.css');
     wp_enqueue_style('testimonyHome', get_template_directory_uri() . '/assets/home-testimony.css');
     wp_enqueue_style('contactPage', get_template_directory_uri() . '/assets/contact.css');
+    wp_enqueue_style('footer', get_template_directory_uri() . '/assets/footer.css');
 
     //js
     wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [], false, true);
@@ -62,6 +76,7 @@ add_action('after_setup_theme', 'training_supports');
 add_action('wp_enqueue_scripts', 'training_register_assets');
 add_filter('nav_menu_css_class', 'training_menu_class');
 add_filter('nav_menu_link_attributes', 'training_menu_link_class');
+add_action( 'after_setup_theme', 'training_custom_logo_setup' );
 
 
 require_once 'options/ConfigBlog.php';
@@ -144,4 +159,6 @@ function training_testimonies_pagination(string $query_var, int $max_display, ar
         'total_pages' => $total_pages,
         'page' => $page
     ];
-}
+};
+
+require_once('includes/perso_info_theme_settings.php');

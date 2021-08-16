@@ -5,7 +5,7 @@
                 <div class="d-flex flex-column align-items-center pt-3">
                     <div class="title mb-5">
                         <h1 class="text-center"><?= esc_html(ucfirst(the_title())) ?></h1>
-                        <hr class="my-5">
+                        <hr class="my-5 blog-hr">
                         <p class="text-center fst-italic text-muted h4 mb-3">Posté le <?= the_date() ?></p>
                         <p class="text-center fst-italic text-muted h5">Auteur : <?= ucfirst(get_the_author()) ?></p>
                     </div>

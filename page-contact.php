@@ -10,12 +10,31 @@
 
     // On récupère les differents champs ACF
     $contactForm = get_field('formulaire_de_contact');
-    $description = get_field('description');
-    $adresse = get_field('adresse');
-    $telephone = get_field('numero_de_telephone');
-    $email = get_field('email');
-    $horaire = get_field('jour_et_horaire_douverture');
-    $social = get_field('reseaux_sociaux');
+
+    // On récupère les champs custom
+    $description = get_theme_mod("Description");
+    $adresse = get_theme_mod("Adresse");
+    $telephone = get_theme_mod("Telephone");
+    $email = get_theme_mod("Mail");
+    $horaire = get_theme_mod("Horaire");
+    $social = [
+        [
+            'title' => 'facebook',
+            'url' => get_theme_mod("Facebook"),
+        ],
+        [
+            'title' => 'twitter',
+            'url' => get_theme_mod("Twitter"),
+        ],
+        [
+            'title' => 'instagram',
+            'url' => get_theme_mod("Instagram"),
+        ],
+        [
+            'title' => 'linkedin',
+            'url' => get_theme_mod("Linkedin"),
+        ],
+    ];
 
     ?>
    <div class="embed-responsive embed-responsive-16by9">
