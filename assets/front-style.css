@@ -10,7 +10,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 50vh;
+    height: 40vh;
     max-width: 100vw;
     margin-top: 0;
     padding: 0;
@@ -28,7 +28,7 @@ body {
 
 .carousel {
     background-color: black;
-    height: 30vh;
+    min-height: 40vh;
     max-width: 100vw;
     margin-top: 0;
     padding: 0;
@@ -41,7 +41,22 @@ body {
     align-self: center;
 }
 
-footer {
-    background: rgb(71, 63, 209);
-    background: linear-gradient(90deg, rgba(71, 63, 209, 1) 0%, rgba(0, 212, 255, 1) 100%);
+.error-404 {
+    height: 50vh;
+    text-align: center;
+}
+
+.logo-comment {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.bulle {
+    background: #139ee0;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 3px;
+    width: 350px;
 }

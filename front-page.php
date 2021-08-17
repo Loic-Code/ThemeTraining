@@ -32,32 +32,15 @@ wp_reset_postdata(); ?>
 
 <!-- Bannière -->
 </div>
-<div id=" carousel carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <p class="text-light">"Temoignage 1"</p>
-    </div>
-    <div class="carousel-item">
-    <p class="text-light">"Temoignage 2"</p>
-    </div>
-    <div class="carousel-item">
-    <p class="text-light">"Temoignage 3"</p>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
+        <?php get_template_part("parts/homepage_temoignage", 'post') ?>
+
 <div class="row p-0 m-0">
-<?php $image = get_field('banner_middle') ?>
+    <?php $image = get_field('banner_middle') ?>
     <div class="banner d-flex flex-row" style="background-image: url('<?= $image['url'] ?>')">
     </div>
 </div>
+
 <div class="container pb-4">
     <!-- A propos -->
 
@@ -65,6 +48,9 @@ wp_reset_postdata(); ?>
 
     <hr class="m-3">
 
+    <p class="text-center p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+
     <?php get_template_part('parts/homepage_staff', 'post'); ?>
 
-    <?php get_footer() ?>
+    <?php
+    get_footer() ?>

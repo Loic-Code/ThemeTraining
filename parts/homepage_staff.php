@@ -1,4 +1,4 @@
-<?php $personnels = get_fields(training_get_page_by_template('page-about.php')) ?>
+<?php $personnels = get_fields(training_get_page_by_templates('page-about.php')) ?>
 
 <main class="px-2 py-4">
     <?php if ($personnels) : ?>
@@ -15,7 +15,7 @@
                         $params = 'sizes';
                         $size = 'thumbnail';
                         ?>
-                        <div class="card col-12 col-md-7 col-lg-5 col-xl-3 mt-2 mb-5 shadow me-xl-1">
+                        <div class="card col-12 col-md-7 col-lg-5 col-xl-3 mt-2 mb-5 shadow me-xl-1" data-aos="fade-up" data-aos-duration="1000">
                             <div class="d-flex justify-content-center">
                                 <img src="<?= $photo[$params][$size] ?>" class="card-img-top mt-4 border" alt="<?= $photo['alt'] === '' ? 'photo de ' . esc_html($personnel['nom']) : $photo['alt'] ?>">
                             </div>

@@ -1,0 +1,10 @@
+.image-single-blog{
+    object-fit: cover;
+    object-position: center;
+}
+
+.blog-hr {
+    width: 200px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
