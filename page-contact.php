@@ -63,13 +63,13 @@
                    <?php
                    // On affiche la description
                     if ($description) {
-                        echo $description;
+                        echo '<p>' . $description . '</p>';
                     }
                     ?>
                </div>
            </div>
            <hr>
-           <div class="row">
+           <div class="row info_contact">
                <div class="col-md-12 px-5">
                    <ul class="p-0 m-0">
                        <div class="my-2">
