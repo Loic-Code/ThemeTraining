@@ -1,4 +1,4 @@
-.image-single-blog{
+.image-single-blog {
     object-fit: cover;
     object-position: center;
 }
@@ -7,4 +7,10 @@
     width: 200px;
     margin: 0 auto;
     border: 1px solid #000000;
+}
+
+@media screen and (max-width: 768px) {
+    .image-single-blog {
+        max-height: 60vh;
+    }
 }
