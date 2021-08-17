@@ -25,7 +25,7 @@ get_header();
         // On affiche les testimonies
         foreach ($testimonials as $row) { ?>
 
-            <div class="testimonial rounded-pill d-flex justify-content-between p-3 my-4">
+            <div class="testimonial rounded-pill d-flex justify-content-between p-3 my-4" data-aos="fade-right">
                 <h3 class="testimonial-title titleRight text-center m-auto">
                     <?= $row['nom'] ?>
                     <small><?= $row['titre_du_message'] ?></small>
@@ -61,7 +61,7 @@ get_header();
     </div>
 
     <div class="col-md-6 m-auto">
-        <div id="carouselExampleControls" class="carousel vert slide mb-5" data-ride="carousel" data-interval="1">
+        <div id="carouselExampleControls" class="carousel vert slide mb-5" data-ride="carousel" data-interval="1" data-aos="fade-left">
             <div class="carousel-inner">
                 <?php
                 // On ajoute les images
