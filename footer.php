@@ -4,8 +4,8 @@
 
   </div>
 
-  <footer class="text-center pt-5 text-lg-start text-muted footer">
-      <section class="">
+  <footer class="text-center pt-5 text-lg-start text-muted footer" style="background-color: <?= get_theme_mod('footer_background'); ?> !important">
+      <section style="color: <?= get_theme_mod('footer_text'); ?> !important">
           <div class="container-fluid text-center text-md-start">
               <div class="row">
                   <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
