@@ -20,7 +20,7 @@ class ConfigBlog
     }
 
     //change [...] to ... in the excerpt
-    private static function training_excerpt_more($more)
+    public static function training_excerpt_more($more)
     {
         if (!is_single()) {
             return '...';
