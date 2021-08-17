@@ -172,3 +172,5 @@ function training_testimonies_pagination(string $query_var, int $max_display, ar
 };
 
 require_once('includes/perso_info_theme_settings.php');
+
+require_once('includes/Color_theme_setting.php');

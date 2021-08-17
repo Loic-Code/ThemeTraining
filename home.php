@@ -13,15 +13,15 @@
                     <?php endif; ?>
                 >
                     <div class="row <?= $i % 2 ? 'flex-row-reverse' : '' ?>">
-                        <div class="col-md-3">
+                        <div class="col-md-6 col-lg-4 col-xl-3">
                             <?php if (get_the_post_thumbnail() !== ''): ?>
-                                <?php the_post_thumbnail('card-header', ['class' => 'img-fluid h-100', 'alt' => 'Image du blog']) ?>
+                                <?php the_post_thumbnail('card-header', ['class' => 'img-fluid h-100 col-12', 'alt' => 'Image du blog']) ?>
                             <?php else : ?>
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
                                      class="img-fluid" alt="pas d'image">
                             <?php endif; ?>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-6 col-lg-8 col-xl-9">
                             <div class="card-body">
                                 <h2 class="card-title"> <?= esc_html(ucfirst(the_title())) ?> </h2>
                                 <p class="fst-italic"><?= the_date() ?></p>

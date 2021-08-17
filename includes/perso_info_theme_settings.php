@@ -4,7 +4,6 @@ function training_customize_register($wp_customize)
 {
 	$wp_customize->add_section("vos_infos", array(
 		"title" => __("Vos informations publique"),
-        'description' => 'Ici, vous pouvez entrez vos informations de contact, votre texte de déscription ainsi que vos réseaux sociaux',
 		"priority" => 30,
 	));
 }
