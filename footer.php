@@ -1,7 +1,3 @@
-  <?php
-
-    ?>
-
   </div>
 
   <footer class="text-center pt-5 text-lg-start text-muted footer">

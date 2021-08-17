@@ -38,7 +38,7 @@ list($url, $width, $height, $is_intermediate) = $thumbnail;
 <?php if (is_404()): ?>
     <div class="page-header d-flex align-items-center justify-content-center"
          style="background-image: url(<?php header_image() ?>)"></div>
-<?php elseif (is_home() || is_single() && !is_single(get_post_type('temoignage'))): ?>
+<?php elseif (is_home() || get_post_type() === 'post' ): ?>
         <div class="page-header d-flex align-items-center justify-content-center"
              style="background-image: url(<?= get_the_post_thumbnail_url($bannerBlog) ?>)"></div>
 <?php else: ?>
