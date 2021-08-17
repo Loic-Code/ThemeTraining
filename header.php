@@ -11,8 +11,10 @@
 <body class="<?= str_replace('.php', '', get_page_template_slug()) ?>">
 
         <?php
-        require_once('assets/style.php');
-        include('assets/testimony_style.php');
+
+        require_once('assets/php-style/style.php');
+        require_once('assets/php-style/testimony_style.php');
+        require_once('assets/php-style/contact_style.php');
 
         ?>
 
