@@ -1,5 +1,4 @@
   </div>
-
   <footer class="text-center pt-5 text-lg-start text-muted footer">
       <section>
           <div class="container-fluid text-center text-md-start">
