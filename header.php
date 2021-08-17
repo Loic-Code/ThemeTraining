@@ -3,14 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php wp_head(); ?>
 </head>
 
 <body class="<?= str_replace('.php', '', get_page_template_slug()) ?>">
-
 
 <?php
 
@@ -20,7 +18,7 @@ require_once('assets/php-style/contact_style.php');
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">LOGO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -57,4 +55,4 @@ list($url, $width, $height, $is_intermediate) = $thumbnail;
              style="background-image: url(<?= $url ?>)"></div>
     </div>
 <?php endif; ?>
-<div class="container">
+<div class="container pb-4">
