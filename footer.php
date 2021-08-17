@@ -5,7 +5,7 @@
   </div>
 
   <footer class="text-center pt-5 text-lg-start text-muted footer">
-      <section class="">
+      <section>
           <div class="container-fluid text-center text-md-start">
               <div class="row">
                   <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
