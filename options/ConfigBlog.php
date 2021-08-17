@@ -36,8 +36,8 @@ class ConfigBlog
             return;
         }
         ?>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
+        <nav aria-label="Page navigation" >
+            <ul class="pagination d-flex flex-column flex-sm-row">
                 <?php
                 foreach ($pages as $page) {
                     $active = strpos($page, 'current') !== false;
