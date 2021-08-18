@@ -1,10 +1,14 @@
 <?php get_header() ?>
+<?php require_once 'options/PaginateCustom.php';
+$paginatCustom = new PaginateCustom('post', 'blog', 4);
+$articles = $paginatCustom->searchPosts();
+?>
 <main class="p-4">
     <h1 class="mb-4">Blog</h1>
-    <?php if (have_posts()): ?>
+    <?php if ($articles->have_posts()): ?>
         <div class="row d-flex justify-content-around">
             <?php $i = 1 ?>
-            <?php while (have_posts()) : the_post(); ?>
+            <?php while ($articles->have_posts()) : $articles->the_post(); ?>
                 <div class="card mb-3 p-0"
                     <?php if ($i % 2) : ?>
                         data-aos="fade-right" data-aos-duration="1000"
@@ -40,7 +44,7 @@
                 </div>
                 <?php $i++ ?>
             <?php endwhile; ?>
-            <?php ConfigBlog::training_bootstrap_pagination(); ?>
+            <?php $paginatCustom->paginateBootstrap(); ?>
         </div>
     <?php else: ?>
         <h2>Aucun article</h2>
