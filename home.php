@@ -1,6 +1,6 @@
 <?php get_header() ?>
 <?php require_once 'options/PaginateCustom.php';
-$paginatCustom = new PaginateCustom('post', 'blog', 2);
+$paginatCustom = new PaginateCustom('post', 'blog', 4);
 $articles = $paginatCustom->searchPosts();
 ?>
 <main class="p-4">

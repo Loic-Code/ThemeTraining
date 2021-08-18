@@ -45,7 +45,7 @@ class PaginateCustom
         return add_query_arg(
             'paged',
             $page,
-            '/'. $this->slugRedirect .'/'
+            '/' . $this->slugRedirect . '/'
         );
     }
 
@@ -53,23 +53,26 @@ class PaginateCustom
     {
         $pageActual = absint($this->getPageActual());
         $pageMax = absint($this->getTotalPages());
-        ?>
+        $totalPosts = absint((wp_count_posts($this->postType))->publish);
 
-        <nav aria-label="...">
-            <ul class="pagination">
-                <li class="page-item<?= $pageActual === 1 ? ' disabled' : ''?>">
-                    <a class="page-link" href="<?= $this->linkPaginate($pageActual - 1) ?>">Précédent</a>
-                </li>
-                <?php for ($i = 1; $i <= $pageMax; $i++) : ?>
-                    <li class="page-item<?= $pageActual === $i ? ' active' : '' ?>" aria-current="page">
-                        <a class="page-link" href="<?= $this->linkPaginate($i) ?>"><?= $i ?></a>
+        if ($totalPosts > $this->postPerPage) {
+            ?>
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item<?= $pageActual === 1 ? ' disabled' : '' ?>">
+                        <a class="page-link" href="<?= $this->linkPaginate($pageActual - 1) ?>">Précédent</a>
                     </li>
-                <?php endfor; ?>
-                <li class="page-item<?= $pageActual === $pageMax ? ' disabled' : ''?>">
-                    <a class="page-link" href="<?= $this->linkPaginate($pageActual + 1) ?>">Next</a>
-                </li>
-            </ul>
-        </nav>
-        <?php
+                    <?php for ($i = 1; $i <= $pageMax; $i++) : ?>
+                        <li class="page-item<?= $pageActual === $i ? ' active' : '' ?>" aria-current="page">
+                            <a class="page-link" href="<?= $this->linkPaginate($i) ?>"><?= $i ?></a>
+                        </li>
+                    <?php endfor; ?>
+                    <li class="page-item<?= $pageActual === $pageMax ? ' disabled' : '' ?>">
+                        <a class="page-link" href="<?= $this->linkPaginate($pageActual + 1) ?>">Next</a>
+                    </li>
+                </ul>
+            </nav>
+            <?php
+        }
     }
 }
