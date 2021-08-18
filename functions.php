@@ -57,7 +57,7 @@ function training_register_assets()
     }
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, true);
-    wp_enqueue_script('theme-js', get_template_directory_uri() . '/js/theme.js', array('AOS'), null, true);
+    wp_enqueue_script('tilt-js', get_template_directory_uri() . '/assets/js/tilt.js', [], false, true);
 }
 
 function training_menu_class($classes)

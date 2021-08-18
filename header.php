@@ -18,7 +18,7 @@ require_once('assets/php-style/contact_style.php');
 
 ?>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">LOGO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
