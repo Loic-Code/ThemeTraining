@@ -1,3 +1,7 @@
+.image-box{
+    height: 100%;
+}
+
 .image-single-blog {
     object-fit: cover;
     object-position: center;
