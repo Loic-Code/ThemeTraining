@@ -68,7 +68,7 @@ class PaginateCustom
                         </li>
                     <?php endfor; ?>
                     <li class="page-item<?= $pageActual === $pageMax ? ' disabled' : '' ?>">
-                        <a class="page-link" href="<?= $this->linkPaginate($pageActual + 1) ?>">Next</a>
+                        <a class="page-link" href="<?= $this->linkPaginate($pageActual + 1) ?>">Suivant</a>
                     </li>
                 </ul>
             </nav>
