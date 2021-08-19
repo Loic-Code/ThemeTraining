@@ -2,7 +2,7 @@
   min-width: 40vw;
   max-width: 80vw;
   margin: auto;
-  background: rgb(73, 65, 65);
+  background: rgb(255, 255, 255, 0.5);
   position: relative;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -20,6 +20,6 @@
   width: 0;
   height: 0;
   border-top: 13px solid transparent;
-  border-right: 26px solid rgb(73, 65, 65);
+  border-right: 26px solid rgb(255, 255, 255, 0.5);
   border-bottom: 13px solid transparent;
 }
