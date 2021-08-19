@@ -10,7 +10,7 @@
         <div class="col-md-6 col-lg-8 col-xl-9">
             <div class="card-body">
                 <h5 class="card-title"><?php the_title() ?></h5>
-                <p class="card-text"><?php the_content() ?></p>
+                <p class="card-text"><?php the_excerpt() ?></p>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="<?php the_permalink() ?>"><button type="button" class="btn btn-outline-primary m-2">Voir l'article</button></a>

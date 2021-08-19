@@ -33,11 +33,33 @@ wp_reset_postdata(); ?>
 <!-- Bannière -->
 </div>
 
-        <?php get_template_part("parts/homepage_temoignage", 'post') ?>
+<?php get_template_part("parts/homepage_temoignage", 'post') ?>
 
 <div class="row p-0 m-0">
     <?php $image = get_field('banner_middle') ?>
     <div class="banner d-flex flex-row" style="background-image: url('<?= $image['url'] ?>')">
+        <div class="wrapper d-flex justify-content-between text-center" data-aos="fade-up" data-aos-duration="1000">
+            <?php
+            $keys_numbers = get_fields();
+            $keys = $keys_numbers['keys_numbers'];
+            ?>
+            <?php foreach ($keys as $key): ?>
+            <?php
+
+            $icon = $key['icon'];
+            $number = $key['number'];
+            $text = $key['text'];
+
+            ?>
+            
+            <div class="counter col_third m-1">
+                <i class="<?= $icon ?> fa-2x"></i>
+                <h2 class="timer count-title count-number" data-to="<?= $number ?>" data-speed="1500"></h2>
+                <p class="count-text"><?=  $text ?></p>
+            </div>
+            
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
 
@@ -48,7 +70,7 @@ wp_reset_postdata(); ?>
 
     <hr class="m-3">
 
-    <p class="text-center p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    <p class="text-center p-5"><?php the_field('describe') ?></p>
 
     <?php get_template_part('parts/homepage_staff', 'post'); ?>
 
