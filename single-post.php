@@ -10,10 +10,13 @@
                         <p class="text-center fst-italic text-muted h5">Auteur : <?= ucfirst(get_the_author()) ?></p>
                     </div>
                     <?php if (get_the_post_thumbnail() !== ''): ?>
-                        <?php the_post_thumbnail('large', ['class' => 'image-single-blog border rounded mb-5 col-12 p-2', 'alt' => 'Image du blog', 'data-aos' => "zoom-in-up", 'data-aos-duration' => 1000]) ?>
+                        <div class="image-box">
+                            <?php the_post_thumbnail('large', ['class' => 'image-single-blog border rounded mb-5 col-12 p-2', 'alt' => 'Image du blog', 'data-aos' => "zoom-in-up", 'data-aos-duration' => 1000]) ?>
+                        </div>
                     <?php else : ?>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
-                             class="image-single-blog border rounded mb-5 col-5 h-20" alt="pas d'image" data-aos="zoom-in-up" data-aos-duration="1000">
+                             class="image-single-blog border rounded mb-5 col-5 h-20" alt="pas d'image"
+                             data-aos="zoom-in-up" data-aos-duration="1000">
                     <?php endif; ?>
                 </div>
                 <?php the_content() ?>
