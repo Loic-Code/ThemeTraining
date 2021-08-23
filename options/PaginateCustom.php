@@ -7,11 +7,11 @@ class PaginateCustom
     private string $postStatus;
     private string $slugRedirect;
 
-    public function __construct(string $postType, string $slugRedirect, int $postPerPage = 10, string $postStatus = 'publish')
+    public function __construct(string $postType, string $postStatus = 'publish')
     {
         $this->postType = $postType;
-        $this->slugRedirect = $slugRedirect;
-        $this->postPerPage = $postPerPage;
+        $this->slugRedirect = (get_queried_object())->post_name;
+        $this->postPerPage = get_option('posts_per_page');
         $this->postStatus = $postStatus;
     }
 
@@ -45,7 +45,7 @@ class PaginateCustom
         return add_query_arg(
             'paged',
             $page,
-            '/' . $this->slugRedirect . '/'
+            get_the_permalink( (get_queried_object())->ID ) . $this->slugRedirect . '/'
         );
     }
 

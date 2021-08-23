@@ -9,7 +9,7 @@
                             the_custom_logo();
                         }
                         ?>
-                      <div class="d-flex justify-content-around pt-3 social_logo">
+                      <div class="d-flex justify-content-around mt-5 pt-3 social_logo">
                           <?php
                             $social = [
                                 [
@@ -102,8 +102,8 @@
               </div>
           </div>
       </section>
-      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2021 Copyright:
+      <div class="text-center p-4 copyright" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2021 Copyright: 
           <a class="text-reset fw-bold" href=""><?php
                                                 //Site title (set in Settings > General)
                                                 bloginfo('name'); ?></a>

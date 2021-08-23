@@ -1,4 +1,4 @@
-<div class="card mb-3 m-3" data-aos="fade-up" data-aos-duration="1000">
+<div class="card mb-3 m-3" data-aos="fade-up" data-aos-duration="1000"z>
     <div class="row flex-row-reverse">
         <div class="col-md-6 col-lg-4 col-xl-3">
             <?php if (get_the_post_thumbnail() !== '') : ?>
@@ -13,7 +13,7 @@
                 <p class="card-text"><?php the_excerpt() ?></p>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="<?php the_permalink() ?>"><button type="button" class="btn btn-outline-primary m-2">Voir l'article</button></a>
+                <a href="<?php the_permalink() ?>"><button type="button" class="btn btn-primary m-2">Voir l'article</button></a>
             </div>
         </div>
     </div>
