@@ -9,6 +9,116 @@
 
 .wpcf7-submit {
 width: 100%;
+}
 
+span[class*="wpcf7-not-valid-tip"] {
+    color: #ce3434 !important;
+}
+
+
+.modal-contact .confirm,
+.modal-contact .error {		
+	color: #636363;
+	width: 325px;
+	font-size: 14px;
+}
+.modal-contact .confirm .modal-content,
+.modal-contact .error .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+}
+.modal-contact .confirm .modal-header,
+.modal-contact .error .modal-header {
+	border-bottom: none;   
+	position: relative;
+}
+.modal-contact .confirm h4,
+.modal-contact .error h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -15px;
+}
+.modal-contact .confirm .form-control, .modal-contact .confirm .btn,
+.modal-contact .error .form-control, .modal-contact .error .btn {
+	min-height: 40px;
+	border-radius: 3px; 
+}
+.modal-contact .confirm .close,
+.modal-contact .error .close {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}	
+.modal-contact .confirm .modal-footer,
+.modal-contact .error .modal-footer {
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 13px;
+}	
+.modal-contact .confirm .icon-box {
+	color: #fff;		
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #82ce34;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.modal-contact .error .icon-box {
+    color: #fff;		
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #ce3434;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.modal-contact .confirm .icon-box i,
+.modal-contact .error .icon-box i {
+    color: white !important;
+	font-size: 58px;
+	position: relative;
+	top: 3px; 
+}
+.modal-contact .confirm.modal-dialog,
+.modal-contact .error .modal-dialog {
+	margin-top: 80px;
+}
+.modal-contact .confirm .btn,
+.modal-contact .error .btn {
+	color: #fff;
+	border-radius: 4px;
+	background: #82ce34;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+.modal-contact .confirm .btn:hover, .modal-contact .confirm .btn:focus,
+.modal-contact .error .btn:hover, .modal-contact .error .btn:focus {
+	background: #6fb32b;
+	outline: none;
+}
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
 }
 

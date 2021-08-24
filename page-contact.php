@@ -48,7 +48,7 @@
                <h3 class="text-center"> Nous contacter </h3>
                <div>
                    <?php
-                   // On affiche le formulaire
+                    // On affiche le formulaire
                     if ($contactForm) {
                         echo $contactForm;
                     }
@@ -61,7 +61,7 @@
                <div class="col-md-12 px-5">
                    <h3 class="text-center"> Information de contact </h3>
                    <?php
-                   // On affiche la description
+                    // On affiche la description
                     if ($description) {
                         echo '<p>' . $description . '</p>';
                     }
@@ -93,7 +93,7 @@
                    <h4> Restons connectés : </h4>
                    <div class="d-flex justify-content-around pt-3 social_logo">
                        <?php
-                       // On affiche les réseaux sociaux
+                        // On affiche les réseaux sociaux
                         if ($social) {
                             foreach ($social as $row) {
                                 switch ($row['title']) {
@@ -119,7 +119,7 @@
                                         break;
 
                                     default:
-                                        echo '<a href="' . $row['url'] . '" target="_blank"><i class="fab fa-'.$row['title'].'"></i></a>';
+                                        echo '<a href="' . $row['url'] . '" target="_blank"><i class="fab fa-' . $row['title'] . '"></i></a>';
                                         break;
                                 }
                             }
@@ -130,4 +130,10 @@
            </div>
        </div>
    </div>
+<?php
+
+   require_once(get_template_directory() . '/parts/WPCF7_error.php');
+   require_once(get_template_directory() . '/parts/WPCF7_success.php');
+   
+   ?>
    <?php get_footer(); ?>
