@@ -13,7 +13,7 @@
                 <p class="card-text"><?php the_excerpt() ?></p>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="<?php the_permalink() ?>"><button type="button" class="btn btn-outline-primary m-2">Voir l'article</button></a>
+                <a href="<?php the_permalink() ?>"><button type="button" class="btn btn-primary m-2">Voir l'article</button></a>
             </div>
         </div>
     </div>

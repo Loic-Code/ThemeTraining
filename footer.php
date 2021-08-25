@@ -1,15 +1,15 @@
 </div>
-<footer class="text-center py-3 text-lg-start text-muted footer">
+<footer class="py-5 text-muted footer">
     <section>
-        <div class="container-fluid text-center text-md-start">
+        <div class="container-fluid">
             <div class="row">
-                <div class="d-flex flex-column col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 justify-content-center">
+                <div class="d-flex flex-column col-lg-4 mb-5">
                     <?php
                     if (function_exists('the_custom_logo')) {
                         the_custom_logo();
                     }
                     ?>
-                    <div class="d-flex justify-content-around pt-4 social_logo">
+                    <div class="d-flex justify-content-around mt-5 pt-3 social_logo">
                         <?php
                         $social = [
                             [
@@ -64,45 +64,48 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-5">
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Contact
-                    </h6>
-                    <?php
-                    if (get_theme_mod("Adresse")) :
-                        ?>
-                        <p><i class="fas fa-map-marker-alt me-3"></i> <?= get_theme_mod("Adresse") ?></p>
-                    <?php endif; ?>
-
-                    <?php if (get_theme_mod("Mail")) : ?>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            <?= get_theme_mod("Mail") ?>
-                        </p>
-                    <?php endif; ?>
-                    <?php if (get_theme_mod("Telephone")) : ?>
-                        <p><i class="fas fa-phone me-3"></i> <?= get_theme_mod("Telephone") ?> </p>
-                    <?php endif; ?>
-                    <?php if (get_theme_mod("Horaire")) : ?>
-                        <p><i class="fas fa-clock me-3"></i> <?= get_theme_mod("Horaire") ?> </p>
-                    <?php endif; ?>
-                </div>
-                <div class="d-flex flex-column col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 justify-content-center mt-4">
-
-                    <h6 class="text-uppercase fw-bold mb-4">
+                <div class="d-flex justify-content-center mb-5 col-lg-4">
+                    <div class="d-flex flex-column">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
                         <?php
-                        //Site title (set in Settings > General)
-                        bloginfo('name'); ?>
-                    </h6>
+                        if (get_theme_mod("Adresse")) :
+                            ?>
+                            <p><i class="fas fa-map-marker-alt me-3"></i> <?= get_theme_mod("Adresse") ?></p>
+                        <?php endif; ?>
 
-                    <?php if (get_theme_mod("Description")) : ?>
-                        <p> <?= get_theme_mod("Description"); ?> </p>
-                    <?php endif; ?>
+                        <?php if (get_theme_mod("Mail")) : ?>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                <?= get_theme_mod("Mail") ?>
+                            </p>
+                        <?php endif; ?>
+                        <?php if (get_theme_mod("Telephone")) : ?>
+                            <p><i class="fas fa-phone me-3"></i> <?= get_theme_mod("Telephone") ?> </p>
+                        <?php endif; ?>
+                        <?php if (get_theme_mod("Horaire")) : ?>
+                            <p><i class="fas fa-clock me-3"></i> <?= get_theme_mod("Horaire") ?> </p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mb-5 col-lg-4">
+                    <div class="d-flex flex-column">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <?php
+                            //Site title (set in Settings > General)
+                            bloginfo('name'); ?>
+                        </h6>
+
+                        <?php if (get_theme_mod("Description")) : ?>
+                            <p> <?= get_theme_mod("Description"); ?> </p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center copyright" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2021 Copyright:
         <a class="text-reset fw-bold" href=""><?php
             //Site title (set in Settings > General)
