@@ -8,33 +8,39 @@ if (!isset($personnels)) {
     <?php if ($personnels) : ?>
         <div class="row d-flex justify-content-around">
             <?php $i = 1;
-            foreach ($personnels as $personnel) : ?>
+            foreach ($personnels as $acfFieldName => $personnel) : ?>
                 <?php if ($i <= 3) : ?>
-                    <?php if ($personnel['nom'] !== '') : ?>
-                        <?php
-                        /*
-                         * params picture
-                         */
-                        $photo = $personnel['photo'];
-                        $params = 'sizes';
-                        $size = 'thumbnail';
+                    <?php if ($acfFieldName !== 'description'): ?>
+                        <?php if ($personnel['nom'] !== '') : ?>
+                            <?php
+                            /*
+                             * params picture
+                             */
+                            $photo = $personnel['photo'];
+                            $params = 'sizes';
+                            $size = 'thumbnail';
 
-                        ?>
-                        <figure class="profile mb-5" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="profile-image"><img src="<?= $photo[$params][$size] ?>" alt="staff" data-aos="fade" data-aos-duration="2000" />
-                                <div class="icons">
-                                    <a class="mx-4" href="<?= $personnel['facebook'] ?>"><i class="ion-social-facebook"></i></a>
-                                    <a class="mx-4" href="<?= $personnel['twitter'] ?>"> <i class="ion-social-twitter"></i></a>
-                                    <a class="mx-4" href="<?= $personnel['instagram'] ?>"> <i class="ion-social-instagram"></i></a>
+                            ?>
+                            <figure class="profile mb-5" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="profile-image"><img src="<?= $photo[$params][$size] ?>" alt="staff"
+                                                                data-aos="fade" data-aos-duration="2000"/>
+                                    <div class="icons">
+                                        <a class="mx-4" href="<?= $personnel['facebook'] ?>"><i
+                                                    class="ion-social-facebook"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['twitter'] ?>"> <i
+                                                    class="ion-social-twitter"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['instagram'] ?>"> <i
+                                                    class="ion-social-instagram"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <figcaption>
-                                <h3><?= esc_html(ucfirst($personnel['nom'])) ?></h3>
-                                <h4>Public Relations</h4>
-                                <p><?= esc_html(ucfirst($personnel['description'])) ?></p>
-                            </figcaption>
-                            <div class="banner-staff"></div>
-                        </figure>
+                                <figcaption>
+                                    <h3><?= esc_html(ucfirst($personnel['nom'])) ?></h3>
+                                    <h4>Public Relations</h4>
+                                    <p><?= esc_html(ucfirst($personnel['description'])) ?></p>
+                                </figcaption>
+                                <div class="banner-staff"></div>
+                            </figure>
+                        <?php endif; ?>
                     <?php endif; ?>
                     <?php $i++; ?>
                 <?php endif; ?>
