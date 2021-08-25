@@ -1,4 +1,8 @@
-<?php $personnels = get_fields(training_get_page_by_templates('page-about.php')) ?>
+<?php
+if (!isset($personnels)) {
+    $personnels = get_fields(training_get_page_by_templates('page-about.php'));
+}
+?>
 
 <main class="px-2 py-4">
     <?php if ($personnels) : ?>
@@ -32,9 +36,9 @@
                             <div class="banner-staff"></div>
                         </figure>
                     <?php endif; ?>
+                    <?php $i++; ?>
                 <?php endif; ?>
-            <?php $i++;
-            endforeach; ?>
+            <?php endforeach; ?>
         </div>
     <?php endif; ?>
     <div class="d-flex justify-content-center">

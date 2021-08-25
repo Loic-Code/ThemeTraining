@@ -50,9 +50,8 @@
                    <?php
                     // On affiche le formulaire
                     if ($contactForm) {
-                        $contactForm = str_replace('class="wpcf7"', 'class="wpcf7 col-12"', $contactForm);
                         $contactForm = str_replace('wpcf7-form-control ', 'wpcf7-form-control col-12 ', $contactForm);
-                        $contactForm = str_replace('class="wpcf7-form init"', 'class="wpcf7-form init d-flex flex-column align-items-center"', $contactForm);
+                        $contactForm = str_replace('class="wpcf7-form init', 'class="d-flex flex-column align-items-center wpcf7-form init', $contactForm);
                         echo $contactForm;
                     }
                     ?>
