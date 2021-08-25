@@ -44,12 +44,15 @@
 
    <div class="row">
        <div class="col-md-6 d-flex justify-content-center" data-aos="fade-right">
-           <div>
+           <div class="col-12">
                <h3 class="text-center"> Nous contacter </h3>
-               <div>
+               <div class="d-flex justify-content-center">
                    <?php
                     // On affiche le formulaire
                     if ($contactForm) {
+                        $contactForm = str_replace('class="wpcf7"', 'class="wpcf7 col-12"', $contactForm);
+                        $contactForm = str_replace('wpcf7-form-control ', 'wpcf7-form-control col-12 ', $contactForm);
+                        $contactForm = str_replace('class="wpcf7-form init"', 'class="wpcf7-form init d-flex flex-column align-items-center"', $contactForm);
                         echo $contactForm;
                     }
                     ?>
