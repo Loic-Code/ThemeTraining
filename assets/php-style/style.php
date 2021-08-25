@@ -24,7 +24,7 @@ $text_size = '1.2em';
 
 
     body {
-        background-color: <?= $primary_color ?> !important;
+        background-color: <?= $secondary_color ?> !important;
     }
 
     body .container {
@@ -70,13 +70,6 @@ $text_size = '1.2em';
 
     footer i {
         color: <?= $primary_color ?> !important;
-    }
-
-    .fa-2x {
-        margin: 0 auto;
-        float: none;
-        display: table;
-        color: <?= $primary_color ?>;
     }
 
     .main-actu .text {
@@ -126,7 +119,57 @@ $text_size = '1.2em';
         border: 2px solid <?= $primary_color ?> !important;
     }
 
-    .profile  i {
-    color: <?= $primary_color ?> !important;
-  }
+    .profile i {
+        color: <?= $light_color ?> !important;
+    }
+
+    figure.testimony {
+        color: <?= $primary_color ?> !important;
+    }
+
+    figure.testimony blockquote {
+        background-color: <?= $light_color ?> !important;
+    }
+
+    figure.testimony .author {
+        color: <?= $light_color ?> !important;
+    }
+
+    .counter {
+        background-color: <?= $light_color ?> !important;
+    }
+
+    .count-text {
+        color: <?= $primary_color ?> !important;
+    }
+
+    .fa-2x {
+        color: <?= $primary_color ?> !important;
+    }
+
+    .counter:hover {
+        background-color: <?= $primary_color ?> !important;
+    }
+
+    .counter:hover .fa-2x,
+    .counter:hover .count-title,
+    .counter:hover .count-text {
+        color: <?= $light_color ?> !important;
+    }
+
+    .banner-testimony {
+        background-color: <?= $dark_color ?> !important;
+    }
+
+    .describe-staff {
+        color: <?= $light_color ?> !important;
+    }
+
+    .profile i:hover {
+        color: <?= $primary_color ?> !important;
+    }
+
+    .banner-staff {
+        background-color: <?= $primary_color ?> !important;
+    }
 </style>

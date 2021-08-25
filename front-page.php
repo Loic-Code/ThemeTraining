@@ -2,7 +2,7 @@
 
 <!-- Actualités -->
 
-<h1 class="py-4 text-center">Actualités</h1>
+<h1 class="py-4 text-center">Toute l'actualités</h1>
 
 
 <?php
@@ -20,6 +20,10 @@ while ($query->have_posts()) : $query->the_post();
 
 <?php endwhile;
 wp_reset_postdata(); ?>
+
+<div class="d-flex justify-content-center">
+        <a href="<?php the_permalink() ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i class="fas fa-plus"></i>D'ACTUALITÉS</a>
+    </div>
 
 <!-- Bannière -->
 </div>
@@ -57,9 +61,9 @@ wp_reset_postdata(); ?>
 <div class="container pb-4">
     <!-- A propos -->
 
-    <h1 class="py-4 text-center">Qui sommes nous ?</h1>
+    <h1 class="pt-4 text-center">Qui sommes nous ?</h1>
 
-    <p class="text-center p-5"><?php the_field('describe') ?></p>
+    <p class="describe-staff text-center p-5"><?php the_field('describe') ?></p>
 
     <?php get_template_part('parts/homepage_staff', 'post'); ?>
 
