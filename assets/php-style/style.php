@@ -11,7 +11,7 @@ $text_size = '1.2em';
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Belleza&display=swap');
 
-    nav {
+    nav:not(.paginate-custom) {
         background-color: <?= $dark_color ?> !important;
         color: <?= $primary_color ?> !important;
     }
