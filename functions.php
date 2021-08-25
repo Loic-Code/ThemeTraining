@@ -48,6 +48,7 @@ function training_register_assets()
     wp_enqueue_style('testimonyHome', get_template_directory_uri() . '/assets/home-testimony.css');
     wp_enqueue_style('contactPage', get_template_directory_uri() . '/assets/contact.css');
     wp_enqueue_style('footer', get_template_directory_uri() . '/assets/footer.css');
+    wp_enqueue_style('footer', get_template_directory_uri() . '/assets/footer.css');
 
     //js
     wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [], false, true);
@@ -58,6 +59,7 @@ function training_register_assets()
     wp_enqueue_script('bootstrap');
     wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, true);
     wp_enqueue_script('counter-js', get_template_directory_uri() . '/assets/js/counter.js', array('jquery'), 1.0, true);
+    wp_enqueue_script('modal', get_template_directory_uri() . '/assets/js/WPCF7_modal.js', [], false, true);
 }
 
 function training_menu_class($classes)
@@ -175,7 +177,3 @@ function training_testimonies_pagination(string $query_var, int $max_display, ar
 require_once('includes/perso_info_theme_settings.php');
 
 require_once('includes/Color_theme_setting.php');
-
-require_once('includes/contactForm_modal.php');
-
-add_action('wp_footer', 'mycustom_wp_footer');
