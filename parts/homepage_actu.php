@@ -8,26 +8,33 @@
                 <span><?= $dates['month']; ?></span>
             </span>
         </div>
-        <div class="image" style="background-image: url('<?= wp_get_attachment_image_url(get_post_thumbnail_id(), 'full') ?>');">
+        <?php $image = wp_get_attachment_image_url(get_post_thumbnail_id(), 'full'); ?>
+        <?php if ($image): ?>
+        <div class="image" style="background-image: url('<?= $image ?>');">
+            <?php else: ?>
+            <div class="image"
+                 style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png');">
+                <?php endif ?>
+            </div>
         </div>
-    </div>
-    <div class="text row bg-light d-flex flex-row pb-3">
-        <span class="title mt-1 p-3"><?php the_title() ?></span>
-        <div class="d-flex flex-row mb-2">
-            <a href="<?php the_permalink() ?>">
+        <div class="text row bg-light d-flex flex-row pb-3">
+            <span class="title mt-1 p-3"><?php the_title() ?></span>
+            <div class="d-flex flex-row mb-2">
+                <a href="<?php the_permalink() ?>">
                 <span class="author m-2">
                     <i class="fas fa-edit"></i>
                     <?php the_author() ?>
                 </span>
-            </a>
-            <a href="<?php the_permalink() ?>">
+                </a>
+                <a href="<?php the_permalink() ?>">
                 <span class="commentary m-2">
                     <i class="far fa-comment"></i>
                     <?= get_comments_number() ?>
                 </span>
-            </a>
+                </a>
+            </div>
+            <span class="text m-2"><?php the_excerpt() ?></span>
+            <a href="<?php the_permalink() ?>" class="btn btn--with-icon"><i class="fas fa-arrow-right"></i>VOIR
+                L'ARTICLE</a>
         </div>
-        <span class="text m-2"><?php the_excerpt() ?></span>
-        <a href="<?php the_permalink() ?>" class="btn btn--with-icon"><i class="fas fa-arrow-right"></i>VOIR L'ARTICLE</a>
     </div>
-</div>

@@ -6,13 +6,21 @@ class PaginateCustom
     private int $postPerPage;
     private string $postStatus;
     private string $slugRedirect;
+    private array $exclude;
 
-    public function __construct(string $postType, string $postStatus = 'publish')
+    public function __construct(string $postType, array $excludeIds = [], string $postStatus = 'publish')
     {
+        $object = get_queried_object();
+        if ($object instanceof WP_Term)
+        {
+            $this->slugRedirect = $object->taxonomy . '/' . $object->slug;
+        }else{
+            $this->slugRedirect = (get_queried_object())->post_name;
+        }
         $this->postType = $postType;
-        $this->slugRedirect = (get_queried_object())->post_name;
         $this->postPerPage = get_option('posts_per_page');
         $this->postStatus = $postStatus;
+        $this->exclude = $excludeIds;
     }
 
     private function getPageActual(): string
@@ -26,13 +34,14 @@ class PaginateCustom
             'post_type' => $this->postType,
             'post_status' => $this->postStatus,
             'posts_per_page' => $this->postPerPage,
+            'post__not_in' => $this->exclude,
             'paged' => $this->getPageActual()
         ];
     }
 
     public function searchPosts(): WP_Query
     {
-        return new WP_Query($this->setQueryArguments($this->setQueryArguments()));
+        return new WP_Query($this->setQueryArguments());
     }
 
     private function getTotalPages(): int
@@ -49,7 +58,7 @@ class PaginateCustom
         );
     }
 
-    public function paginateBootstrap()
+    public function render()
     {
         $pageActual = absint($this->getPageActual());
         $pageMax = absint($this->getTotalPages());
@@ -57,7 +66,7 @@ class PaginateCustom
 
         if ($totalPosts > $this->postPerPage) {
             ?>
-            <nav aria-label="...">
+            <nav class="paginate-custom" aria-label="...">
                 <ul class="pagination d-flex flex-column flex-sm-row">
                     <li class="page-item<?= $pageActual === 1 ? ' disabled' : '' ?>">
                         <a class="page-link rounded" href="<?= $this->linkPaginate($pageActual - 1) ?>">Précédent</a>
