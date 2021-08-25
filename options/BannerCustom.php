@@ -4,6 +4,7 @@ class BannerCustom
 {
     private const PAGES = [
         'post' => 'actualites',
+        'post' => 'blog',
         'bien' => 'nos biens'
     ];
 

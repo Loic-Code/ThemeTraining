@@ -34,7 +34,7 @@
                 </a>
             </div>
             <span class="text m-2"><?php the_excerpt() ?></span>
-            <a href="<?php the_permalink() ?>" class="btn btn--with-icon"><i class="fas fa-arrow-right"></i>VOIR
-                L'ARTICLE</a>
+            <a href="<?php the_permalink() ?>" class="btn btn--with-icon"><i class="fas fa-arrow-right"></i><span>VOIR
+                L'ARTICLE</span></a>
         </div>
     </div>

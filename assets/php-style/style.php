@@ -86,7 +86,7 @@ $text_size = '1.2em';
 
     .btn {
         background: <?= $light_color ?> !important;
-        color: r<?= $primary_color ?> !important;
+        color: <?= $primary_color ?> !important;
     }
 
     .btn:hover {
@@ -97,6 +97,9 @@ $text_size = '1.2em';
     .btn.btn--with-icon i {
         color: <?= $light_color ?> !important;
         background: <?= $primary_color ?> !important;
+    }
+    .btn:hover.btn--with-icon span{
+        color: <?= $light_color ?> !important;
     }
 
     .text span {
