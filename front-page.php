@@ -2,7 +2,7 @@
 
 <!-- Actualités -->
 
-<h1 class="py-4 text-center">Toute l'actualités</h1>
+<h1 class="py-4 text-center">Toute les actualités</h1>
 
 
 <?php
@@ -22,7 +22,7 @@ while ($query->have_posts()) : $query->the_post();
 wp_reset_postdata(); ?>
 
 <div class="d-flex justify-content-center">
-        <a href="<?php the_permalink() ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i class="fas fa-plus"></i>D'ACTUALITÉS</a>
+        <a href="<?php the_permalink() ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i class="fas fa-plus"></i><span>D'ACTUALITÉS</span></a>
     </div>
 
 <!-- Bannière -->
