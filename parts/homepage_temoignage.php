@@ -9,7 +9,6 @@ $data = training_retrieve_all_testimonies($testimonies);
 $i = 1;
 $j = 1;
 ?>
-
 <h1 class="text-light text-center m-2 pt-4">Qu'en disent nos utilisateurs ?</h1>
 <div class="d-flex justify-content-around flex-column flex-lg-row align-items-center">
     <?php
@@ -38,3 +37,4 @@ $j = 1;
     }
     ?>
 </div>
+
