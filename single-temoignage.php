@@ -4,16 +4,16 @@ get_header();
 
 <h1 class='pt-4'>Pourquoi nous ?</h1>
 
-<div class="row pt-4">
+<div class="row pt-4 d-flex justify-content-arround">
 
-    <div class="col-md-6 m-auto">
+    <div class="col-md-5 m-auto d-flex flex-column">
         <?php
         // On recupère tous les champs ACF
         $testimonies = get_fields();
         // On filtre pour récuperer les champs "testimonies"
         $data = training_retrieve_all_testimonies($testimonies);
         // Logique pour pagination
-        $pagination_data = training_testimonies_pagination('testimony', 3, $data);
+        $pagination_data = training_testimonies_pagination('testimony', 2, $data);
 
         $page = $pagination_data['page'];
         $total_pages = $pagination_data['total_pages'];
@@ -22,16 +22,17 @@ get_header();
         ?>
 
         <?php
+
         // On affiche les testimonies
         foreach ($testimonials as $row) { ?>
 
-            <div class="testimonial rounded-pill d-flex justify-content-between p-3 my-4" data-aos="fade-right">
-                <h3 class="testimonial-title titleRight text-center m-auto">
-                    <?= $row['nom'] ?>
-                    <small><?= $row['titre_du_message'] ?></small>
-                </h3>
-                <p class="description mx-3 p-4"><?= $row['message'] ?></p>
-            </div>
+            <figure class="testimony mt-3 mx-auto" data-aos="fade-up" data-aos-duration="1000">
+                <blockquote class="d-flex align-items-center"><span class="mx-auto text-center fst-italic"><?= $row['message'] ?></span></blockquote>
+                <div class="author">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample1.jpg" alt="sq-sample1" />
+                    <h5><?= $row['nom'] ?><span><?= $row['titre_du_message'] ?></span></h5>
+                </div>
+            </figure>
 
         <?php } ?>
         <div class="d-flex justify-content-around testimony_arrow">
@@ -60,7 +61,7 @@ get_header();
         </div>
     </div>
 
-    <div class="col-md-6 m-auto">
+    <div class="col-md-5 m-auto">
         <div id="carouselExampleControls" class="carousel vert slide mb-5" data-ride="carousel" data-interval="1" data-aos="fade-left">
             <div class="carousel-inner">
                 <?php
@@ -71,7 +72,7 @@ get_header();
                     if ($page_image === get_field('image_de_page_' . $j)) {
                 ?>
                         <div class="carousel-item">
-                            <img class="d-block mx-auto img-fluid" src="<?= get_field('image_de_page_' . $j)['url'] ?> " alt="Slide">
+                            <img class="d-block mx-auto page_image" src="<?= get_field('image_de_page_' . $j)['url'] ?> " alt="Slide">
                         </div>
                     <?php
                         $j++;
@@ -79,7 +80,7 @@ get_header();
                     } elseif ($page_image === get_field('image_de_page')) {
                     ?>
                         <div class="carousel-item active">
-                            <img class="d-block mx-auto img-fluid" src="<?= get_field('image_de_page')['url'] ?> " alt="Slide">
+                            <img class="d-block mx-auto page_image" src="<?= get_field('image_de_page')['url'] ?> " alt="Slide">
                         </div>
 
                 <?php
@@ -98,6 +99,11 @@ get_header();
         </div>
     </div>
 
+    <!-- Container div -->
 </div>
+
+</body>
+
+
 
 <?php get_footer() ?>
