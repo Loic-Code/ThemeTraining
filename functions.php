@@ -175,3 +175,31 @@ function training_testimonies_pagination(string $query_var, int $max_display, ar
 require_once('includes/perso_info_theme_settings.php');
 
 require_once('includes/Color_theme_setting.php');
+
+function training_get_month_name($month) {
+    // On récupère le jour en chiffre
+    $day_number = substr($month, 0, 2);
+    // On récupère le mois en chiffre avec le /
+    $month_number1 = strstr($month, '/');
+    // On enlève le /
+    $month_number = substr($month_number1, 1);
+    $month_name = [
+        '01' => 'Jan',
+        '02' => 'Fév',
+        '03' => 'Mar',
+        '04' => 'Avr',
+        '05' => 'Mai',
+        '06' => 'Jun',
+        '07' => 'Jul',
+        '08' => 'Aoû',
+        '09' => 'Sep',
+        '10' => 'Oct',
+        '11' => 'Nov',
+        '12' => 'Déc',   
+    ];  
+    return [
+        "day" => $day_number,
+        "month" => $month_name[$month_number]
+    ];
+}
+

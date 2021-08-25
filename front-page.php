@@ -2,9 +2,8 @@
 
 <!-- Actualités -->
 
-<h1 class="p-4">Actualités</h1>
+<h1 class="py-4 text-center">Actualités</h1>
 
-<hr class="m-3">
 
 <?php
 
@@ -13,18 +12,10 @@ $query = new WP_Query([
     'posts_per_page' => 3,
 ]);
 
-$i = 1;
-
 while ($query->have_posts()) : $query->the_post();
 
-    if ($i % 2) {
-        get_template_part('parts/homepage_actu_left', 'post');
-    } else {
-        get_template_part('parts/homepage_actu_right', 'post');
-    }
-
-    $i++;
-
+        get_template_part('parts/homepage_actu', 'post');
+        
 ?>
 
 <?php endwhile;
@@ -66,9 +57,7 @@ wp_reset_postdata(); ?>
 <div class="container pb-4">
     <!-- A propos -->
 
-    <h1 class="p-4">Qui sommes nous ?</h1>
-
-    <hr class="m-3">
+    <h1 class="py-4 text-center">Qui sommes nous ?</h1>
 
     <p class="text-center p-5"><?php the_field('describe') ?></p>
 

@@ -14,16 +14,21 @@
                         $photo = $personnel['photo'];
                         $params = 'sizes';
                         $size = 'thumbnail';
+
                         ?>
-                        <div class="card col-12 col-md-7 col-lg-5 col-xl-3 mt-2 mb-5 shadow me-xl-1" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="d-flex justify-content-center">
-                                <img src="<?= $photo[$params][$size] ?>" class="card-img-top mt-4 border" alt="<?= $photo['alt'] === '' ? 'photo de ' . esc_html($personnel['nom']) : $photo['alt'] ?>">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title"> <?= esc_html(ucfirst($personnel['nom'])) ?> </h5>
-                                <p class="card-text"> <?= esc_html(ucfirst($personnel['description'])) ?> </p>
-                            </div>
-                        </div>
+                        <figure class="profile mb-5" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="profile-image"><img src="<?= $photo[$params][$size] ?>" alt="staff" /></div>
+                            <figcaption>
+                                <h3><?= esc_html(ucfirst($personnel['nom'])) ?></h3>
+                                <h4>Public Relations</h4>
+                                <p><?= esc_html(ucfirst($personnel['description'])) ?></p>
+                                <div class="icons">
+                                    <a class="m-2" href="<?= $personnel['facebook'] ?>"><i class="ion-social-facebook"></i></a>
+                                    <a class="m-2" href="<?= $personnel['twitter'] ?>"> <i class="ion-social-twitter"></i></a>
+                                    <a class="m-2" href="<?= $personnel['instagram'] ?>"> <i class="ion-social-instagram"></i></a>
+                                </div>
+                            </figcaption>
+                        </figure>
                     <?php endif; ?>
                 <?php endif; ?>
             <?php $i++;

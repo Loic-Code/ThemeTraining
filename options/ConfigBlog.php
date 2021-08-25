@@ -12,7 +12,9 @@ class ConfigBlog
     // reduce excerpt
     public static function training_card_excerpt_length($length)
     {
-        if (!is_single()) {
+        if(is_front_page()){
+            return 50;
+        }elseif (!is_single()) {
             return 20;
         }
 

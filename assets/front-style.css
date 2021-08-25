@@ -2,6 +2,16 @@ body {
     background-color: whitesmoke;
 }
 
+nav img {
+    max-height: 50px !important;
+    max-width: 50px !important;
+    margin-right: 5vw;
+}
+
+h1 {
+    font-size: 50px !important;
+}
+
 .container {
     background-color: white;
 }
@@ -10,6 +20,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: bottom;
     height: 40vh;
     max-width: 100vw;
     margin-top: 0;
@@ -46,32 +57,334 @@ body {
     object-position: bottom;
 }
 
-.col_half { width: 49%; }
-.col_third { width: 32%; }
-.col_fourth { width: 23.5%; }
-.col_fifth { width: 18.4%; }
-.col_sixth { width: 15%; }
-.col_three_fourth { width: 74.5%;}
-.col_twothird{ width: 66%;}
+.col_half {
+    width: 49%;
+}
+.col_third {
+    width: 32%;
+}
+.col_fourth {
+    width: 23.5%;
+}
+.col_fifth {
+    width: 18.4%;
+}
+.col_sixth {
+    width: 15%;
+}
+.col_three_fourth {
+    width: 74.5%;
+}
+.col_twothird {
+    width: 66%;
+}
 .col_half,
 .col_third,
 .col_twothird,
 .col_fourth,
 .col_three_fourth,
-.col_fifth{
-	position: relative;
-	display:inline;
-	display: inline-block;
-	float: left;
-	margin-right: 2%;
-	margin-bottom: 20px;
+.col_fifth {
+    position: relative;
+    display: inline;
+    display: inline-block;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 20px;
 }
-.end { margin-right: 0 !important; }
+.end {
+    margin-right: 0 !important;
+}
 /* Column Grids End */
 
-.wrapper { width: 980px; margin: auto; position: relative;}
-.counter { background-color: rgba(255, 255, 255, 0.85); padding: 20px 0; border-radius: 5px;}
-.count-title { font-size: 20px; font-weight: bold;  margin-top: 10px; margin-bottom: 0; text-align: center;}
-.count-text { font-size: 13px; font-weight: bold;  margin-top: 10px; margin-bottom: 0; text-align: center; }
-.fa-2x { margin: 0 auto; float: none; display: table; color: #4ad1e5; }
+.wrapper {
+    width: 980px;
+    margin: auto;
+    position: relative;
+}
+.counter {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px 0;
+    border-radius: 5px;
+}
+.count-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.count-text {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
 
+/* actuality card blog */
+
+.main-actu {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.main-actu .contain-image {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 60%);
+    background-color: black;
+}
+
+.main-actu .image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 80vh;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+}
+
+.main-actu:hover .image {
+    transform: scale(1.2) rotate(3deg);
+    opacity: 0.15;
+}
+
+.main-actu .text {
+    width: 97%;
+    margin: auto;
+    margin-top: -340px;
+    z-index: 2;
+    border-radius: 5px;
+}
+
+.main-actu .text a {
+    text-decoration: none;
+}
+
+.btn {
+    font-weight: bold;
+    outline: none;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 5px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    padding: 0;
+    border: none;
+    width: 220px;
+    margin: 20px;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.btn.btn--with-icon {
+    padding-right: 20px;
+}
+
+.btn.btn--with-icon i {
+    padding: 0px 30px 0px 15px;
+    margin-right: 10px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: bottom;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+}
+
+.btn.btn--only-icon {
+    width: 50px;
+}
+
+.date {
+    position: absolute;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.main-actu .date-box {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    border: 4px solid;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 22px;
+}
+
+.main-actu:hover .date-box {
+    display: flex;
+}
+
+/* actuality card profile */
+
+.profile {
+    position: relative;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 365px;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4em;
+    font-size: 14px;
+    box-shadow: none !important;
+}
+
+.profile * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.profile .profile-image {
+    display: inline-block;
+    width: 80%;
+    z-index: 1;
+    position: relative;
+    padding: 10px;
+    border: 2px solid;
+}
+
+.profile .profile-image img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.profile figcaption {
+    width: 100%;
+    padding: 125px 25px 25px;
+    margin-top: -100px;
+    display: inline-block;
+}
+
+.profile h3,
+.profile h4,
+.profile p {
+    margin: 0 0 5px;
+}
+
+.profile h3 {
+    font-weight: 600;
+    font-size: 1.3em;
+    font-family: "Playfair Display", Arial, sans-serif;
+}
+
+.profile h4 {
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.profile p {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.profile .icons {
+    text-align: center;
+    width: 100%;
+}
+
+.profile i {
+    padding: 10px 2px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.75;
+}
+
+.profile i:hover {
+    opacity: 1;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+
+/* actuality card profile */
+
+figure.testimony {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 300px;
+    max-width: 310px;
+    width: 100%;
+    color: #333;
+    text-align: left;
+    box-shadow: none !important;
+  }
+  figure.testimony * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  figure.testimony img {
+    max-width: 100%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+  }
+  figure.testimony blockquote {
+    margin: 0;
+    height: 260px;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    background-color: #fafafa;
+    padding: 30px 50px 65px 50px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 0 0 -50px;
+    line-height: 1.6em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+  figure.testimony blockquote:before,
+  figure.testimony blockquote:after {
+    font-family: 'FontAwesome';
+    content: "\201C";
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.3;
+    font-style: normal;
+  }
+  figure.testimony blockquote:before {
+    top: 35px;
+    left: 20px;
+  }
+  figure.testimony blockquote:after {
+    content: "\201D";
+    right: 20px;
+    bottom: 35px;
+  }
+  figure.testimony .author {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+  }
+  figure.testimony .author h5 {
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 800;
+  }
+  figure.testimony .author h5 span {
+    font-weight: 400;
+    text-transform: none;
+    display: block;
+  }

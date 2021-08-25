@@ -47,7 +47,7 @@ $text_size = '1.2em';
     body p {
         font-family: <?= $font_text ?> !important;
         font-size: <?= $text_size ?> !important;
-        color: <?= $light_color ?> !important;
+        color: <?= $dark_color ?> !important;
     }
 
 
@@ -57,7 +57,7 @@ $text_size = '1.2em';
 
     footer h6 {
         color: <?= $primary_color ?> !important;
-        font-size:<?= $subtitle_size ?> !important;
+        font-size: <?= $subtitle_size ?> !important;
     }
 
     footer .fab {
@@ -71,4 +71,62 @@ $text_size = '1.2em';
     footer i {
         color: <?= $primary_color ?> !important;
     }
+
+    .fa-2x {
+        margin: 0 auto;
+        float: none;
+        display: table;
+        color: <?= $primary_color ?>;
+    }
+
+    .main-actu .text {
+        color: <?= $dark_color ?> !important;
+    }
+
+    .main-actu .text span[class*="title"] {
+        font-size: <?= $subtitle_size ?>;
+    }
+
+    .main-actu:hover .text span[class*="title"] {
+        color: <?= $primary_color ?> !important;
+    }
+
+    .btn {
+        background: <?= $light_color ?> !important;
+        color: r<?= $primary_color ?> !important;
+    }
+
+    .btn:hover {
+        background: <?= $primary_color ?> !important;
+        color: <?= $light_color ?> !important;
+    }
+
+    .btn.btn--with-icon i {
+        color: <?= $light_color ?> !important;
+        background: <?= $primary_color ?> !important;
+    }
+
+    .text span {
+        color: <?= $dark_color ?> !important;
+    }
+
+    .text span:hover {
+        color: <?= $primary_color ?> !important;
+    }
+
+    .text i {
+        color: <?= $primary_color ?> !important;
+    }
+
+    .profile figcaption {
+        background-color: <?= $light_color ?> !important;
+    }
+
+    .profile .profile-image {
+        border: 2px solid <?= $primary_color ?> !important;
+    }
+
+    .profile  i {
+    color: <?= $primary_color ?> !important;
+  }
 </style>

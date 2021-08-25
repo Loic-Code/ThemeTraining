@@ -20,7 +20,7 @@ require_once('assets/php-style/contact_style.php');
 
 <nav class="navbar fixed-top navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">LOGO</a>
+        <a class="navbar-brand" href="#"><?= get_custom_logo() ?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@ $bannerBlog = (new WP_Query([
     'title' => 'Blog',
     'post_type' => 'page',
 ]))->post->ID;
-$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
+$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 list($url, $width, $height, $is_intermediate) = $thumbnail;
 ?>
 <?php if (is_404()): ?>
