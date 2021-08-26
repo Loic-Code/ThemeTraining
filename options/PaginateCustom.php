@@ -66,18 +66,18 @@ class PaginateCustom
 
         if ($totalPosts > $this->postPerPage) {
             ?>
-            <nav class="paginate-custom" aria-label="...">
+            <nav class="paginate-custom text-center" aria-label="...">
                 <ul class="pagination d-flex flex-column flex-sm-row">
-                    <li class="page-item<?= $pageActual === 1 ? ' disabled' : '' ?>">
-                        <a class="page-link rounded" href="<?= $this->linkPaginate($pageActual - 1) ?>">Précédent</a>
+                    <li class="page-item<?= $pageActual === 1 ? ' disabled' : ' arrow_active' ?> prev">
+                        <a class="page-link" href="<?= $this->linkPaginate($pageActual - 1) ?>">«</a>
                     </li>
                     <?php for ($i = 1; $i <= $pageMax; $i++) : ?>
-                        <li class="page-item<?= $pageActual === $i ? ' active' : '' ?>" aria-current="page">
-                            <a class="page-link rounded" href="<?= $this->linkPaginate($i) ?>"><?= $i ?></a>
+                        <li class="page-item<?= $pageActual === $i ? ' active' : ' inactive' ?>" aria-current="page">
+                            <a class="page-link number" href="<?= $this->linkPaginate($i) ?>"><?= $i ?></a>
                         </li>
                     <?php endfor; ?>
-                    <li class="page-item<?= $pageActual === $pageMax ? ' disabled' : '' ?>">
-                        <a class="page-link rounded" href="<?= $this->linkPaginate($pageActual + 1) ?>">Suivant</a>
+                    <li class="page-item<?= $pageActual === $pageMax ? ' disabled' : ' arrow_active' ?> next">
+                        <a class="page-link" href="<?= $this->linkPaginate($pageActual + 1) ?> ">»</a>
                     </li>
                 </ul>
             </nav>
