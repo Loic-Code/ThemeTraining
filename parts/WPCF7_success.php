@@ -11,7 +11,7 @@
 				<p class="text-center">Votre message a été envoyé avec succès.</p>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-success btn-block" data-bs-dismiss="modal">OK</button>
+            <button class="btn btn--with-icon align-items-center" data-bs-dismiss="modal"><i class="fas fa-check"></i><span>Compris !</span></button>
 			</div>
 		</div>
 	</div>
