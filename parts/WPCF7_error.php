@@ -10,8 +10,8 @@
             <div class="modal-body">
                 <p class="text-center">Une erreur est survenue, veuillez verifier vos champs et réessayer.</p>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-success btn-block" data-bs-dismiss="modal">OK</button>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn--with-icon align-items-center" data-bs-dismiss="modal"><i class="fas fa-times"></i><span>Je réessaye</span></button>
             </div>
         </div>
     </div>
