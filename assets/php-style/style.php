@@ -16,7 +16,7 @@ $text_size = '1.2em';
         color: <?= $primary_color ?> !important;
     }
 
-    nav a {
+    nav:not(.paginate-custom) a {
         color: <?= $primary_color ?> !important;
         font-family: <?= $font_text ?> !important;
         font-size: <?= $text_size ?> !important;
