@@ -2,14 +2,17 @@
 if (!isset($personnels)) {
     $personnels = get_fields(training_get_page_by_templates('page-about.php'));
 }
+
+//cardsNumber in page-about or here
+$cardsNumber = $cardsNumber ?? 3;
 ?>
 
 <main class="px-2 py-4">
     <?php if ($personnels) : ?>
         <div class="row d-flex justify-content-around">
-            <?php $i = 1;
-            foreach ($personnels as $acfFieldName => $personnel) : ?>
-                <?php if ($i <= 3) : ?>
+            <?php $i = 0 ?>
+            <?php foreach ($personnels as $acfFieldName => $personnel) : ?>
+                <?php if ($i <= $cardsNumber) : ?>
                     <?php if ($acfFieldName !== 'description'): ?>
                         <?php if ($personnel['nom'] !== '') : ?>
                             <?php
