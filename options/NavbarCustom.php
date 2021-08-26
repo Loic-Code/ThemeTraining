@@ -2,11 +2,14 @@
 
 class NavbarCustom
 {
-    private array $links;
+    private const MENU_LOCTATION = 'header';
 
-    public function __construct()
+    private function getlinks(): array
     {
-        $this->links = wp_get_nav_menu_items('primary');;
+        $menu_locations = get_nav_menu_locations();
+        $menu_object = $menu_locations[self::MENU_LOCTATION] ? wp_get_nav_menu_object($menu_locations[self::MENU_LOCTATION]) : null;
+        $menu_name = $menu_object->slug ?? null;
+        return wp_get_nav_menu_items($menu_name) ? wp_get_nav_menu_items($menu_name) : [];
     }
 
     private function getLogo(): void
@@ -39,7 +42,7 @@ class NavbarCustom
                     <div class="navbar-nav">
                         <?php
                         /** @var WP_Post $link */
-                        foreach ($this->links as $link) {
+                        foreach ($this->getlinks() as $link) {
                             $link = $link->to_array();
                             $current_url = $this->getUrl()
                             ?>
