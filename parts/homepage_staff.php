@@ -13,7 +13,7 @@ $cardsNumber = $cardsNumber ?? 3;
             <?php $i = 0 ?>
             <?php foreach ($personnels as $acfFieldName => $personnel) : ?>
                 <?php if ($i <= $cardsNumber) : ?>
-                    <?php if ($acfFieldName !== 'description'): ?>
+                    <?php if ($acfFieldName !== 'description') : ?>
                         <?php if ($personnel['nom'] !== '') : ?>
                             <?php
                             /*
@@ -24,16 +24,12 @@ $cardsNumber = $cardsNumber ?? 3;
                             $size = 'thumbnail';
 
                             ?>
-                            <figure class="profile mb-5" data-aos="fade-up" data-aos-duration="1000">
-                                <div class="profile-image"><img src="<?= $photo[$params][$size] ?>" alt="staff"
-                                                                data-aos="fade" data-aos-duration="2000"/>
+                            <figure class="profile mb-5" data-aos="fade-up" data-aos-duration="1000" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$i?>">
+                                <div class="profile-image"><img src="<?= $photo[$params][$size] ?>" alt="staff" data-aos="fade" data-aos-duration="2000" />
                                     <div class="icons">
-                                        <a class="mx-4" href="<?= $personnel['facebook'] ?>"><i
-                                                    class="ion-social-facebook"></i></a>
-                                        <a class="mx-4" href="<?= $personnel['twitter'] ?>"> <i
-                                                    class="ion-social-twitter"></i></a>
-                                        <a class="mx-4" href="<?= $personnel['instagram'] ?>"> <i
-                                                    class="ion-social-instagram"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['facebook'] ?>"><i class="ion-social-facebook"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['twitter'] ?>"> <i class="ion-social-twitter"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['instagram'] ?>"> <i class="ion-social-instagram"></i></a>
                                     </div>
                                 </div>
                                 <figcaption>
