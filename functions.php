@@ -205,3 +205,16 @@ function training_get_month_name($month) {
     ];
 }
 
+function btnCommantaire($formComment)
+{
+    $formComment['logged_in_as'] = str_replace('</a>. ', '.</a> ', $formComment['logged_in_as']);
+    $formComment['comment_field'] = '<p class="comment-form-comment comment-textarea"><label for="comment">Commentaire <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="5" required="required" class="form-control" placeholder="Tapez votre commentaire ici."></textarea></p>';
+
+    $formComment['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="btn btn--with-icon mb-4 ms-0" value="%4$s"><i
+                class="fas fa-paper-plane"></i><span>Commenter</span></button>';
+    return $formComment;
+}
+
+add_filter('comment_form_defaults', 'btnCommantaire');
+
+
