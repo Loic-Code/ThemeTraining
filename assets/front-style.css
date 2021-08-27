@@ -105,6 +105,7 @@ h1 {
     background-color: rgba(255, 255, 255, 0.85);
     padding: 20px 0;
     border-radius: 5px;
+    transition: ease-in-out 0.5s;
 }
 
 .fa-2x {
@@ -201,6 +202,14 @@ h1 {
     position: absolute;
     z-index: 1;
     margin-left: 65px;
+}
+.btn.btn--with-icon .span{
+    transition: all 0.2s ease-in-out !important;
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
 }
 .btn.btn--with-icon i {
     padding: 0px 30px 0px 15px;
