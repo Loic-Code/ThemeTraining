@@ -1,5 +1,7 @@
-<?php $dates = training_get_month_name(get_the_date('d/m'));
+<?php
+$dates = training_get_month_name(get_the_date('d/m'));
 ?>
+
 <div class="main-actu bg-light mb-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="contain-image">
         <div class="date">

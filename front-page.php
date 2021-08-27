@@ -14,16 +14,21 @@ $query = new WP_Query([
 
 while ($query->have_posts()) : $query->the_post();
 
-        get_template_part('parts/homepage_actu', 'post');
-        
+    get_template_part('parts/homepage_actu', 'post');
+
+    ?>
+
+<?php endwhile; ?>
+
+<?php
+wp_reset_postdata();
+$permalinkActus = get_the_permalink((get_post(get_option('page_for_posts', true)))->ID);
 ?>
 
-<?php endwhile;
-wp_reset_postdata(); ?>
-
 <div class="d-flex justify-content-center">
-        <a href="<?php the_permalink() ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i class="fas fa-plus"></i><span>D'ACTUALITÉS</span></a>
-    </div>
+    <a href="<?= $permalinkActus ?? '' ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i
+                class="fas fa-plus"></i><span>D'ACTUALITÉS</span></a>
+</div>
 
 <!-- Bannière -->
 </div>
@@ -39,20 +44,20 @@ wp_reset_postdata(); ?>
             $keys = $keys_numbers['keys_numbers'];
             ?>
             <?php foreach ($keys as $key): ?>
-            <?php
+                <?php
 
-            $icon = $key['icon'];
-            $number = $key['number'];
-            $text = $key['text'];
+                $icon = $key['icon'];
+                $number = $key['number'];
+                $text = $key['text'];
 
-            ?>
-            
-            <div class="counter col_third m-1">
-                <i class="<?= $icon ?> fa-2x"></i>
-                <h2 class="timer count-title count-number" data-to="<?= $number ?>" data-speed="1500"></h2>
-                <p class="count-text"><?=  $text ?></p>
-            </div>
-            
+                ?>
+
+                <div class="counter col_third m-1">
+                    <i class="<?= $icon ?> fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="<?= $number ?>" data-speed="1500"></h2>
+                    <p class="count-text"><?= $text ?></p>
+                </div>
+
             <?php endforeach; ?>
         </div>
     </div>
@@ -66,9 +71,16 @@ wp_reset_postdata(); ?>
     <p class="describe-staff text-center p-5"><?php the_field('describe') ?></p>
 
     <?php get_template_part('parts/homepage_staff', 'post'); ?>
-
+    <?php
+    $permalinkAbout = get_the_permalink(
+    (get_pages([
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'page-about.php'
+    ])[0]->ID));
+    ?>
     <div class="d-flex justify-content-center">
-        <a href="<?php the_permalink() ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i class="fas fa-arrow-right"></i><span>VOIR LE STAFF</span></a>
+        <a href="<?= $permalinkAbout ?? '' ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i
+                    class="fas fa-arrow-right"></i><span>VOIR LE STAFF</span></a>
     </div>
 
     <?php
