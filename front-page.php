@@ -2,7 +2,7 @@
 
 <!-- Actualités -->
 
-<h1 class="py-4 text-center">Toutes les actualités</h1>
+<h1 class="py-4 text-center">Dernières actualités</h1>
 
 
 <?php
