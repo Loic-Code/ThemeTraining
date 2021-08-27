@@ -17,7 +17,7 @@
 require_once('assets/php-style/style.php');
 require_once('assets/php-style/testimony_style.php');
 require_once('assets/php-style/contact_style.php');
-
+require_once('assets/php-style/pagination_style.php');
 //navbar
 require_once 'options/NavbarCustom.php';
 $navbar = new NavbarCustom();
