@@ -28,7 +28,7 @@ $text_size = '1.2em';
     }
 
     body .container {
-        background-color: <?= $dark_color ?> !important;
+        background-color: <?= $secondary_color ?> !important;
     }
 
     body h1,
@@ -103,7 +103,14 @@ $text_size = '1.2em';
         color: <?= $primary_color ?> !important;
     }
 
-    .btn:hover.btn--with-icon span {
+
+    .btn.btn--with-icon span,
+    .btn.btn--with-icon .span {
+        color: <?= $primary_color ?> !important;
+    }
+    
+    .btn:hover.btn--with-icon span,
+    .btn:hover.btn--with-icon .span {
         color: <?= $light_color ?> !important;
     }
 
