@@ -47,7 +47,4 @@ if (!isset($personnels)) {
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
-    <div class="d-flex justify-content-center">
-        <a href="<?php the_permalink() ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i class="fas fa-arrow-right"></i><span>VOIR LE STAFF</span></a>
-    </div>
 </main>

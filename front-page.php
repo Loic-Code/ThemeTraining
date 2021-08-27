@@ -2,7 +2,7 @@
 
 <!-- Actualités -->
 
-<h1 class="py-4 text-center">Toute les actualités</h1>
+<h1 class="py-4 text-center">Toutes les actualités</h1>
 
 
 <?php
@@ -66,6 +66,10 @@ wp_reset_postdata(); ?>
     <p class="describe-staff text-center p-5"><?php the_field('describe') ?></p>
 
     <?php get_template_part('parts/homepage_staff', 'post'); ?>
+
+    <div class="d-flex justify-content-center">
+        <a href="<?php the_permalink() ?>" class="btn btn--with-icon" data-aos="fade" data-aos-duration="1000"><i class="fas fa-arrow-right"></i><span>VOIR LE STAFF</span></a>
+    </div>
 
     <?php
     get_footer() ?>

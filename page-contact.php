@@ -46,12 +46,13 @@
        <div class="col-md-6 d-flex justify-content-center" data-aos="fade-right">
            <div class="col-12">
                <h3 class="text-center"> Nous contacter </h3>
-               <div class="d-flex justify-content-center">
+               <div class="form d-flex justify-content-center m-2">
                    <?php
                     // On affiche le formulaire
                     if ($contactForm) {
                         $contactForm = str_replace('wpcf7-form-control ', 'wpcf7-form-control col-12 ', $contactForm);
                         $contactForm = str_replace('class="wpcf7-form init', 'class="d-flex flex-column align-items-center wpcf7-form init', $contactForm);
+                        $contactForm = str_replace('class="wpcf7-form-control col-12 wpcf7-submit', 'class="wpcf7-form-control col-12 wpcf7-submit btn-lrg submit-btn', $contactForm);
                         echo $contactForm;
                     }
                     ?>
@@ -139,3 +140,5 @@
    
    ?>
    <?php get_footer(); ?>
+
+   

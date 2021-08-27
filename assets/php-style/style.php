@@ -178,4 +178,5 @@ $text_size = '1.2em';
     .banner-staff {
         background-color: <?= $primary_color ?> !important;
     }
+
 </style>
