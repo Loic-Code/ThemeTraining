@@ -98,10 +98,12 @@ $text_size = '1.2em';
         color: <?= $light_color ?> !important;
         background: <?= $primary_color ?> !important;
     }
+
     .btn.btn--with-icon span,
     .btn.btn--with-icon .span {
         color: <?= $primary_color ?> !important;
     }
+
     .btn:hover.btn--with-icon span,
     .btn:hover.btn--with-icon .span {
         color: <?= $light_color ?> !important;
@@ -179,6 +181,17 @@ $text_size = '1.2em';
 
     .banner-staff {
         background-color: <?= $primary_color ?> !important;
+    }
+
+    .comment-textarea textarea {
+        background-color: <?= $light_color ?> !important;
+        opacity: 0.75 !important;
+        border: 1px solid <?= $secondary_color ?> !important;
+    }
+
+    .comments a ,
+    .comments span{
+        color: <?= $secondary_color ?> !important;
     }
 
 </style>
