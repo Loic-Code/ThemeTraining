@@ -296,6 +296,7 @@ figure.testimony img {
     display: inline-block;
     z-index: 1;
     position: relative;
+    object-fit: cover;
 }
 figure.testimony blockquote {
     margin: 0;

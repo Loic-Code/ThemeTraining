@@ -25,10 +25,11 @@ $j = 1;
         foreach ($alltestimonies as $testimony) {
             if ($j <= 3) {
         ?>
+
                 <figure class="testimony my-5" data-aos="fade-up" data-aos-duration="1000">
                     <blockquote class="d-flex align-items-center"><span class="mx-auto text-center fst-italic"><?= $testimony['message'] ?></span></blockquote>
                     <div class="author">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample1.jpg" alt="sq-sample1" data-aos="fade" data-aos-duration="3000" />
+                        <img src="<?= $testimony['photo'] ?>" alt="sq-sample1" data-aos="fade" data-aos-duration="3000" />
                         <h5><?= $testimony['nom'] ?><span><?= $testimony['titre_du_message'] ?></span></h5>
                     </div>
                 </figure>

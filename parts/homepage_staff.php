@@ -34,7 +34,7 @@ $cardsNumber = $cardsNumber ?? 3;
                                 </div>
                                 <figcaption>
                                     <h3><?= esc_html(ucfirst($personnel['nom'])) ?></h3>
-                                    <h4>Public Relations</h4>
+                                    <h4><?= esc_html(ucfirst($personnel['work'])) ?></h4>
                                     <p><?= esc_html(ucfirst($personnel['description'])) ?></p>
                                 </figcaption>
                                 <div class="banner-staff"></div>
