@@ -15,7 +15,7 @@ $j = 1;
         <?php
         // On récupère les témoignages
         foreach ($data as $row) {
-            if ($row['nom']) {
+            if (isset($row['nom'])) {
                 $alltestimonies[$i] = $row;
                 $i++;
             }
