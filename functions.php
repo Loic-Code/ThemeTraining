@@ -205,3 +205,11 @@ function training_get_month_name($month) {
     ];
 }
 
+
+function hexToRgba($color) {
+    $hex = $color;
+    list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+    $rgbaColor = [$r, $g, $b];
+    $rgbaColor = implode(', ', $rgbaColor);
+    return $rgbaColor;
+}

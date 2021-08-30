@@ -62,7 +62,7 @@ get_header();
     </div>
 
     <div class="col-md-5 m-auto">
-        <div id="carouselExampleControls" class="carousel vert slide mb-5" data-ride="carousel" data-interval="1" data-aos="fade-left">
+        <div id="carouselExampleControls" class="carousel vert slide mb-5" data-ride="carousel" data-interval="1" data-aos="fade-up">
             <div class="carousel-inner">
                 <?php
                 // On ajoute les images

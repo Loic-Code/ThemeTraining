@@ -201,6 +201,11 @@ textarea {
         float: none;
         text-align:center;
     }
+    .input-container {
+        width: 350px;
+        max-width: 100%;
+        margin: 20px auto 25px auto;
+    }
 }
 
 input[type=checkbox] + label {
