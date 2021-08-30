@@ -17,10 +17,11 @@ class BannerCustom
             $singleTemplate = str_replace(get_template_directory() . '/single', 'page', $singleTemplate);
             $templatePostType = str_replace('page-', '', $singleTemplate);
             $templatePostType = str_replace('.php', '', $templatePostType);
-            $titlePageCustom = (get_pages([
+            $titlePageCustom = get_pages([
                 'meta_key' => '_wp_page_template',
                 'meta_value' => $singleTemplate
-            ]))[0]->post_title;
+            ]);
+            $titlePageCustom = isset($titlePageCustom[0]) ? $titlePageCustom[0]->post_title : '';
             return $titlePageCustom ? [$templatePostType => $titlePageCustom] : [];
         }
 

@@ -27,14 +27,14 @@ $cardsNumber = $cardsNumber ?? 3;
                             <figure class="profile mb-5" data-aos="fade-up" data-aos-duration="1000" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$i?>">
                                 <div class="profile-image"><img src="<?= $photo[$params][$size] ?>" alt="staff" data-aos="fade" data-aos-duration="2000" />
                                     <div class="icons">
-                                        <a class="mx-4" href="<?= $personnel['facebook'] ?>"><i class="ion-social-facebook"></i></a>
-                                        <a class="mx-4" href="<?= $personnel['twitter'] ?>"> <i class="ion-social-twitter"></i></a>
-                                        <a class="mx-4" href="<?= $personnel['instagram'] ?>"> <i class="ion-social-instagram"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['facebook'] ?? '' ?>"><i class="ion-social-facebook"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['twitter'] ?? '' ?>"> <i class="ion-social-twitter"></i></a>
+                                        <a class="mx-4" href="<?= $personnel['instagram'] ?? '' ?>"> <i class="ion-social-instagram"></i></a>
                                     </div>
                                 </div>
                                 <figcaption>
                                     <h3><?= esc_html(ucfirst($personnel['nom'])) ?></h3>
-                                    <h4>Public Relations</h4>
+                                    <h4><?= esc_html(ucfirst($personnel['work'])) ?></h4>
                                     <p><?= esc_html(ucfirst($personnel['description'])) ?></p>
                                 </figcaption>
                                 <div class="banner-staff"></div>

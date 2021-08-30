@@ -31,7 +31,9 @@
         <?php else: ?>
             <h2>Aucun article</h2>
         <?php endif; ?>
-        <a class="btn btn-sm btn-primary mt-3" href="/blog">Retour</a>
+        <?php $pagePosts = get_post(get_option('page_for_posts', true)) ?>
+        <a href="<?=get_the_permalink($pagePosts->ID) ?>" class="btn btn--with-icon ms-0" data-aos="fade" data-aos-duration="1000"><i
+                    class="fas fa-undo-alt"></i><span><?= $pagePosts->post_title ?></span></a>
     </main>
 
 <?php get_footer() ?>

@@ -38,7 +38,7 @@ $permalinkActus = get_the_permalink((get_post(get_option('page_for_posts', true)
 <div class="row p-0 m-0">
     <?php $image = get_field('banner_middle') ?>
     <div class="banner d-flex flex-row" style="background-image: url('<?= $image['url'] ?>')">
-        <div class="wrapper d-flex justify-content-between text-center" data-aos="fade-up" data-aos-duration="1000">
+        <div class="wrapper text-center" data-aos="fade-up" data-aos-duration="1000">
             <?php
             $keys_numbers = get_fields();
             $keys = $keys_numbers['keys_numbers'];
@@ -50,14 +50,15 @@ $permalinkActus = get_the_permalink((get_post(get_option('page_for_posts', true)
                 $number = $key['number'];
                 $text = $key['text'];
 
-                ?>
-
-                <div class="counter col_third m-1">
-                    <i class="<?= $icon ?> fa-2x"></i>
-                    <h2 class="timer count-title count-number" data-to="<?= $number ?>" data-speed="1500"></h2>
-                    <p class="count-text"><?= $text ?></p>
-                </div>
-
+            ?>
+            
+            <div class="counter col_fourth m-1">
+                <span class="hover-key"></span>
+                <i class="<?= $icon ?> fa-2x"></i>
+                <h2 class="timer count-title count-number" data-to="<?= $number ?>" data-speed="1500"></h2>
+                <p class="count-text"><?=  $text ?></p>
+            </div>
+            
             <?php endforeach; ?>
         </div>
     </div>

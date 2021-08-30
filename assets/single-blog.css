@@ -1,4 +1,4 @@
-.image-box{
+.image-box {
     height: 100%;
 }
 
@@ -11,6 +11,16 @@
     width: 200px;
     margin: 0 auto;
     border: 1px solid #000000;
+}
+
+.comment-textarea textarea {
+    padding: 40px 30px 30px 30px;
+    border: 1px solid black;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #b4afaf;
+    opacity: 0.75;
+    border-radius: 4px;
 }
 
 @media screen and (max-width: 768px) {

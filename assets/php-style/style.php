@@ -98,6 +98,7 @@ $text_size = '1.2em';
         color: <?= $light_color ?> !important;
         background: <?= $primary_color ?> !important;
     }
+
     .btn.btn--with-icon span,
     .btn.btn--with-icon .span {
         color: <?= $primary_color ?> !important;
@@ -144,24 +145,11 @@ $text_size = '1.2em';
     }
 
     .counter {
-        background-color: <?= $light_color ?> !important;
-    }
-
-    .count-text {
-        color: <?= $primary_color ?> !important;
-    }
-
-    .fa-2x {
-        color: <?= $primary_color ?> !important;
-    }
-
-    .counter:hover {
         background-color: <?= $primary_color ?> !important;
     }
-
-    .counter:hover .fa-2x,
-    .counter:hover .count-title,
-    .counter:hover .count-text {
+    .timer,
+    .fa-2x,
+    .count-text{
         color: <?= $light_color ?> !important;
     }
 
@@ -179,6 +167,17 @@ $text_size = '1.2em';
 
     .banner-staff {
         background-color: <?= $primary_color ?> !important;
+    }
+
+    .comment-textarea textarea {
+        background-color: <?= $light_color ?> !important;
+        opacity: 0.75 !important;
+        border: 1px solid <?= $secondary_color ?> !important;
+    }
+
+    .comments a ,
+    .comments span{
+        color: <?= $secondary_color ?> !important;
     }
 
 </style>
