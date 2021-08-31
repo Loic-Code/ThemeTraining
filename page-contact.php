@@ -43,7 +43,7 @@
    <hr>
 
    <div class="row">
-       <div class="col-md-6 d-flex justify-content-center" data-aos="fade-right">
+       <div class="col-md-6 d-flex justify-content-center" data-aos="fade-up">
            <div class="col-12">
                <h3 class="text-center"> Nous contacter </h3>
                <div class="form d-flex justify-content-center m-2">
@@ -59,7 +59,7 @@
                </div>
            </div>
        </div>
-       <div class="col-md-6" data-aos="fade-left">
+       <div class="col-md-6" data-aos="fade-up">
            <div class="row">
                <div class="col-md-12 px-5">
                    <h3 class="text-center"> Information de contact </h3>
