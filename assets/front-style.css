@@ -85,7 +85,6 @@ h1 {
 .col_three_fourth,
 .col_fifth {
     position: relative;
-    display: inline;
     display: inline-block;
     float: left;
     margin-right: 2%;
@@ -172,8 +171,7 @@ h1 {
 
 .main-actu .text {
     width: 97%;
-    margin: auto;
-    margin-top: -340px;
+    margin: -340px auto auto auto;
     z-index: 2;
     border-radius: 5px;
 }
